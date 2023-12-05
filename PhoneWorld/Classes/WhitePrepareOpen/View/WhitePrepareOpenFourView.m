@@ -167,6 +167,11 @@ static NSString *warningText = @"1、本人正面免冠照片，用户头像占�
         if (self.infoArray.count == 3) {
             cell.addressTextView.text = self.infoArray[2];
             cell.addressPlaceholderLabel.hidden = YES;
+            if ([cell.addressTextView.text isEqualToString:@"中华人民共和国国家移民管理局"]) {
+                cell.addressTextView.userInteractionEnabled = NO;
+            } else {
+                cell.addressTextView.userInteractionEnabled = YES;
+            }
         }
         return cell;
     }
@@ -174,7 +179,7 @@ static NSString *warningText = @"1、本人正面免冠照片，用户头像占�
     NormalInputCell *cell = [[NormalInputCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
 //    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     if ([leftTitleString isEqualToString:@"证件号码"]) {
-        cell.inputTextField.userInteractionEnabled = NO;
+        cell.inputTextField.userInteractionEnabled = self.isIDCardEnable;
     }else{
         cell.inputTextField.delegate = self;
     }
@@ -216,7 +221,9 @@ static NSString *warningText = @"1、本人正面免冠照片，用户头像占�
         cell.addressPlaceholderLabel.hidden = NO;
     }
     if (self.infoArray.count == 3) {
-        [self.infoArray replaceObjectAtIndex:2 withObject:textView.text];
+        if (![self.infoArray[2] isEqualToString:@"中华人民共和国国家移民管理局"]) {
+            [self.infoArray replaceObjectAtIndex:2 withObject:textView.text];
+        }
     }
 }
 

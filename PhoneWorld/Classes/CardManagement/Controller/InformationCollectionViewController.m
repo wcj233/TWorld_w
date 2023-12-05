@@ -76,7 +76,7 @@ CBCentralManagerDelegate>{
 @property (nonatomic) PersonCardModel *personModel;//读出来的身份证信息
 
 //扫描识别
-@property (assign, nonatomic) int cardType;
+@property (assign, nonatomic) int cardType; //身份类型 居民身份证 1 外国人永久居留身份证 2
 
 @property (assign, nonatomic) int resultCount;
 
@@ -113,9 +113,37 @@ CBCentralManagerDelegate>{
     }
     
     [self configCallback];
+    
+    //默认身份证
+    self.cardType = 1;
+    
 }
 
--(void)backAction{
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear: animated];
+    
+    [self chooseCardTypeAction];
+}
+
+- (void)chooseCardTypeAction {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"证件类型" message:@"" preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *a1 = [UIAlertAction actionWithTitle:@"居民身份证" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        self.cardType = 1;
+    }];
+    UIAlertAction *a2 = [UIAlertAction actionWithTitle:@"外国人永久居留身份证" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        self.cardType = 2;
+        
+        [self changeTipStyle];
+    }];
+    
+    [alert addAction:a1];
+    [alert addAction:a2];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+- (void)backAction {
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -155,7 +183,7 @@ CBCentralManagerDelegate>{
 
 
 //页面布局
-- (void)startAction{
+- (void)startAction {
     self.navigationItem.backBarButtonItem = [Utils returnBackButton];
     
     self.informationCollectionView = [[InformationCollectionView alloc]initWithFrame:CGRectMake(0, 0, screenWidth, screenHeight) andIsFinished:self.isFinished andIsFaceCheck:self.isFaceCheck];
@@ -168,9 +196,9 @@ CBCentralManagerDelegate>{
             _currentOpenMode=1;//默认扫描
         }
 //        [self changeTipStyle];
-    }else if (self.cardOpenMode==1){//扫描
+    } else if (self.cardOpenMode==1) {//扫描
         self.informationCollectionView.informationCollectionViewDelegate = self;
-    }else{
+    } else {
 //        self.informationCollectionView.informationCollectionViewDelegate = nil;
         self.informationCollectionView.informationCollectionViewDelegate = self;
     }
@@ -363,7 +391,6 @@ CBCentralManagerDelegate>{
     }];
     
     //默认身份证
-    self.cardType = 2;
     self.resultCount = 7;
     self.typeName = NSLocalizedString(@"二代身份证", nil) ;
 }
@@ -722,7 +749,12 @@ CBCentralManagerDelegate>{
         }
     }
 
+    InputView *numberIV = self.informationCollectionView.inputViews[1];
+    numberIV.textField.userInteractionEnabled = NO;
     
+    self.informationCollectionView.addressView.addressTextView.userInteractionEnabled = YES;
+    self.informationCollectionView.addressView.addressTextView.text = @"";
+    self.informationCollectionView.addressView.addressPlaceholderLabel.hidden = NO;
     
     NSString *title = @"识别仪开户";
     if (_currentOpenMode==2) {//识别仪用户
@@ -732,12 +764,24 @@ CBCentralManagerDelegate>{
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:orignalImage style:UIBarButtonItemStylePlain target:self action:@selector(readInfoAction:)];
 //        [[NSNotificationCenter defaultCenter]removeObserver:self name:@"scanForInformation" object:nil];
         self.informationCollectionView.informationCollectionViewDelegate = nil;
-    }else{
+    } else {
         UIImage *orignalImage = [UIImage imageNamed:@"font2"]; // 暗色字体
         orignalImage = [orignalImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:orignalImage style:UIBarButtonItemStylePlain target:self action:nil];
         self.informationCollectionView.informationCollectionViewDelegate = self;
 //        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(scanForInformationAction) name:@"scanForInformation" object:nil];
+        
+        ///选择扫描识别时，用户拍摄/上传（和以前一样是根据开关控制的）身份证人像面时，直接提示用户“识别证件信息失败，请手动录入”。并且允许用户修改姓名、证件号【需要验证证件号第一位是9开头】【注意：只有这种情况允许修改证件号】
+        if (self.cardType == 2) {
+            //是外国人
+            [Utils toastview:@"识别证件信息失败，请手动录入"];
+            InputView *numberIV = self.informationCollectionView.inputViews[1];
+            numberIV.textField.userInteractionEnabled = YES;
+            
+            self.informationCollectionView.addressView.addressTextView.userInteractionEnabled = NO;
+            self.informationCollectionView.addressView.addressTextView.text = @"中华人民共和国国家移民管理局";
+            self.informationCollectionView.addressView.addressPlaceholderLabel.hidden = YES;
+        }
     }
     if (_cardOpenMode==3) {//全部
         NSMutableAttributedString *s1 = [[NSMutableAttributedString alloc]initWithString:@"图片（点击图片可放大）" attributes:@{NSForegroundColorAttributeName:[Utils colorRGB:@"#333333"],NSFontAttributeName:font14}];

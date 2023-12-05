@@ -30,6 +30,8 @@
 
 @property (nonatomic) UIButton *openButton;
 
+@property (nonatomic, assign) BOOL isIDCardEnable;
+
 @property (nonatomic) NSMutableArray *infoArray;
 @property(nonatomic, weak) id<WhitePrepareOpenFourViewDelegate> whitePrepareOpenFourViewDelegate;
 

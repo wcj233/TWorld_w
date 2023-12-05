@@ -77,7 +77,7 @@ CBCentralManagerDelegate> {
 @property (nonatomic) PersonCardModel *personModel;//读出来的身份证信息
 
 //扫描识别
-@property (assign, nonatomic) int cardType;//卡片类型
+@property (assign, nonatomic) int cardType; //身份类型 居民身份证 1 外国人永久居留身份证 2
 @property (assign, nonatomic) int resultCount;//
 @property (strong, nonatomic) NSString *typeName;
 
@@ -112,7 +112,8 @@ CBCentralManagerDelegate> {
     
     //初始化
     self.resultCount = 7;
-    self.cardType = 2;
+    //默认身份证
+    self.cardType = 1;
     self.isAuto = NO;//是否自动
     
     /*****写卡激活添加识别仪、扫描判断--其他的不确定--所以先把写卡激活分出来*****/
@@ -140,6 +141,34 @@ CBCentralManagerDelegate> {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(clearAllInfosAction:) name:@"ChooseImageViewRemoveImageAction" object:nil];
     
     [self configCallback];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear: animated];
+    
+    [self chooseCardTypeAction];
+}
+
+- (void)chooseCardTypeAction {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"证件类型" message:@"" preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *a1 = [UIAlertAction actionWithTitle:@"居民身份证" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        self.cardType = 1;
+    }];
+    UIAlertAction *a2 = [UIAlertAction actionWithTitle:@"外国人永久居留身份证" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        self.cardType = 2;
+        
+        if (![self.typeString isEqualToString:@"写卡激活"]) {
+            [self changeScanType];
+        }else{
+            [self changeTipStyle];
+        }
+    }];
+    
+    [alert addAction:a1];
+    [alert addAction:a2];
+    
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 //根据上一个界面传过来的值判断当前事识别仪还是扫描获取身份证信息
@@ -206,7 +235,16 @@ CBCentralManagerDelegate> {
         }
     }
     
+//    NormalInputCell *idCell = [self.fourView.contentTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
+//    idCell.inputTextField.userInteractionEnabled = NO;
+//
+//    AddressCell *addressCell = [self.fourView.contentTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0]];
+//    addressCell.addressTextView.text = @"";
+//    addressCell.addressTextView.userInteractionEnabled = YES;
+//    addressCell.addressPlaceholderLabel.hidden = NO;
     
+    self.fourView.isIDCardEnable = NO;
+    self.fourView.infoArray = [NSMutableArray array];
     
     NSString *title = @"识别仪开户";
     if (_scanType==2) {//识别仪用户
@@ -222,6 +260,13 @@ CBCentralManagerDelegate> {
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:orignalImage style:UIBarButtonItemStylePlain target:self action:nil];
         self.fourView.whitePrepareOpenFourViewDelegate = self;
         //        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(scanForInformationAction) name:@"scanForInformation" object:nil];
+        
+        if (self.cardType == 2) {
+            //外国人
+            [Utils toastview:@"识别证件信息失败，请手动录入"];
+            
+            self.fourView.isIDCardEnable = YES;
+        }
     }
     if (_cardOpenMode==3) {//全部
         NSMutableAttributedString *s1 = [[NSMutableAttributedString alloc]initWithString:@"证件上传（点击图片可放大）" attributes:@{NSForegroundColorAttributeName:[Utils colorRGB:@"#333333"],NSFontAttributeName:font14}];
@@ -245,6 +290,11 @@ CBCentralManagerDelegate> {
     }
     
     NSString *title = @"";
+    
+    self.fourView.isIDCardEnable = NO;
+    self.fourView.infoArray = [NSMutableArray array];
+    
+    
     if (self.scanType == 1) {
         // 1 可切换到扫描开户，当前是识别仪开户
         title = @"扫描开户";
@@ -261,6 +311,14 @@ CBCentralManagerDelegate> {
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:orignalImage style:UIBarButtonItemStylePlain target:self action:nil];
         //        self.fourView.chooseImageView.chooseImageViewDelegate = self;
         self.fourView.whitePrepareOpenFourViewDelegate = self;
+        
+        if (self.cardType == 2) {
+            //外国人
+            [Utils toastview:@"识别证件信息失败，请手动录入"];
+            self.fourView.isIDCardEnable = YES;
+            self.fourView.infoArray = [NSMutableArray arrayWithArray:@[@"", @"", @"中华人民共和国国家移民管理局"]];
+            
+        }
     }
     
     NSMutableAttributedString *s1 = [[NSMutableAttributedString alloc]initWithString:@"证件上传（点击图片可放大）" attributes:@{NSForegroundColorAttributeName:[Utils colorRGB:@"#333333"],NSFontAttributeName:font14}];
@@ -286,7 +344,12 @@ CBCentralManagerDelegate> {
 //删除扫描照片的时候清除扫描得到的信息
 - (void)clearAllInfosAction:(NSNotification *)noti{
     
-    self.fourView.infoArray = [NSMutableArray array];
+    if (self.cardType == 2 && self.scanType == 2) {
+        //扫描下的外国人
+        self.fourView.infoArray = [NSMutableArray arrayWithArray:@[@"", @"", @"中华人民共和国国家移民管理局"]];
+    } else {
+        self.fourView.infoArray = [NSMutableArray array];
+    }
     [self.fourView.contentTableView reloadData];
 }
 

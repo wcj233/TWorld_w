@@ -332,7 +332,6 @@
 		8AD329231E49A96700A87910 /* IDCLASSIFIERANDROID.xml in Resources */ = {isa = PBXBuildFile; fileRef = 8AD3290A1E49A96700A87910 /* IDCLASSIFIERANDROID.xml */; };
 		8AD329241E49A96700A87910 /* IDKLICENSE.dat in Resources */ = {isa = PBXBuildFile; fileRef = 8AD3290B1E49A96700A87910 /* IDKLICENSE.dat */; };
 		8AD329251E49A96700A87910 /* IssueAndBirth.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8AD3290C1E49A96700A87910 /* IssueAndBirth.txt */; };
-		8AD329261E49A96700A87910 /* libWintoneCardOCR.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AD3290D1E49A96700A87910 /* libWintoneCardOCR.a */; };
 		8AD329271E49A96700A87910 /* OEMtest.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8AD3290E1E49A96700A87910 /* OEMtest.txt */; };
 		8AD329281E49A96700A87910 /* pntWTPENPDA.lib in Resources */ = {isa = PBXBuildFile; fileRef = 8AD3290F1E49A96700A87910 /* pntWTPENPDA.lib */; };
 		8AD329291E49A96700A87910 /* ProvName.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8AD329101E49A96700A87910 /* ProvName.txt */; };
@@ -1107,7 +1106,6 @@
 		8AD3290A1E49A96700A87910 /* IDCLASSIFIERANDROID.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = IDCLASSIFIERANDROID.xml; sourceTree = "<group>"; };
 		8AD3290B1E49A96700A87910 /* IDKLICENSE.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = IDKLICENSE.dat; sourceTree = "<group>"; };
 		8AD3290C1E49A96700A87910 /* IssueAndBirth.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = IssueAndBirth.txt; sourceTree = "<group>"; };
-		8AD3290D1E49A96700A87910 /* libWintoneCardOCR.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWintoneCardOCR.a; sourceTree = "<group>"; };
 		8AD3290E1E49A96700A87910 /* OEMtest.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OEMtest.txt; sourceTree = "<group>"; };
 		8AD3290F1E49A96700A87910 /* pntWTPENPDA.lib */ = {isa = PBXFileReference; lastKnownFileType = file; path = pntWTPENPDA.lib; sourceTree = "<group>"; };
 		8AD329101E49A96700A87910 /* ProvName.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ProvName.txt; sourceTree = "<group>"; };
@@ -1398,7 +1396,6 @@
 				8A1203EE1DCB396B0011A9C3 /* SystemConfiguration.framework in Frameworks */,
 				8A1203EC1DCB39610011A9C3 /* libz.tbd in Frameworks */,
 				EE79FCC9EBCAAA8F6CEA2ECA /* libPods-PhoneWorld.a in Frameworks */,
-				8AD329261E49A96700A87910 /* libWintoneCardOCR.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2881,7 +2878,6 @@
 				8AD3290A1E49A96700A87910 /* IDCLASSIFIERANDROID.xml */,
 				8AD3290B1E49A96700A87910 /* IDKLICENSE.dat */,
 				8AD3290C1E49A96700A87910 /* IssueAndBirth.txt */,
-				8AD3290D1E49A96700A87910 /* libWintoneCardOCR.a */,
 				8AD3290E1E49A96700A87910 /* OEMtest.txt */,
 				8AD3290F1E49A96700A87910 /* pntWTPENPDA.lib */,
 				8AD329101E49A96700A87910 /* ProvName.txt */,

@@ -84,10 +84,10 @@
     NSDictionary *modeDic = [[NSUserDefaults standardUserDefaults]objectForKey:@"kaihuMode"];
     NSNumber *cardMode = modeDic[@"modes"];
 #pragma mark - 2019
-    if ([self.typeString isEqualToString:@"写卡激活"]) {
+//    if ([self.typeString isEqualToString:@"写卡激活"]) {
         [self jumpWhitePrepareOpenFourTag:button.tag andCardMode:cardMode.intValue];
         return;
-    }
+//    }
     
     if ([self.typeString isEqualToString:@"靓号"]) {
         if (self.cardOpenMode==2) {
