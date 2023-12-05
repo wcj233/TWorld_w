@@ -1,0 +1,6 @@
+framework module SRIDCardReader {
+  umbrella header "SRIDCardReader.h"
+
+  export *
+  module * { export * }
+}
