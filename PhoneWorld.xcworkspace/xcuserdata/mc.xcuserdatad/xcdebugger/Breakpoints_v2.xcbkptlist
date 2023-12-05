@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "F0FCE045-7FA9-415C-9935-69A374FF25B3"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
+         <BreakpointContent
+            uuid = "170653AE-F7FD-4011-B29D-B4BDBEFB1143"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            scope = "0"
+            stopOnStyle = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2F3D623F-5939-4FA3-A720-E1DD7498126D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PhoneWorld/Classes/WhitePrepareOpen/ViewController/AgentWriteViewController.m"
+            timestampString = "591115897.783114"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
+            landmarkName = "-nextAction"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CAB5C754-A065-4A64-A9E7-79E452904029"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PhoneWorld/Classes/WhitePrepareOpen/ViewController/AgentWriteAndChooseViewController.m"
+            timestampString = "594181539.221182"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1051"
+            endingLineNumber = "1051"
+            landmarkName = "-getPreImsiForICCID:forBluetoothDevices:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FD610566-2E8A-4F84-8844-5C530010777E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PhoneWorld/Classes/WhitePrepareOpen/ViewController/AgentWriteAndChooseViewController.m"
+            timestampString = "594181539.221635"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1050"
+            endingLineNumber = "1050"
+            landmarkName = "-getPreImsiForICCID:forBluetoothDevices:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C6BEE30C-E3E5-4261-87D5-DA75B8C5C20F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PhoneWorld/Classes/WhitePrepareOpen/ViewController/AgentWriteAndChooseViewController.m"
+            timestampString = "594181539.22194"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1323"
+            endingLineNumber = "1323"
+            landmarkName = "-writeCardResultBack:withData:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "03BD2E50-DD45-45DB-B91E-FCEABC6793A1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PhoneWorld/Classes/WhitePrepareOpen/ViewController/AgentWriteAndChooseViewController.m"
+            timestampString = "594181539.222219"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1054"
+            endingLineNumber = "1054"
+            landmarkName = "-getPreImsiForICCID:forBluetoothDevices:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B103FBA1-24EA-4AC5-952B-DAFBA07519A5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PhoneWorld/Classes/WhitePrepareOpen/ViewController/AgentWriteAndChooseViewController.m"
+            timestampString = "594181539.222486"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1103"
+            endingLineNumber = "1103"
+            landmarkName = "-resultWriteCardResultsForResult:imsi:iccid:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "84A74DC0-11A1-4816-AEA6-9C0502238E45"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PhoneWorld/Classes/WhitePrepareOpen/ViewController/AgentWriteAndChooseViewController.m"
+            timestampString = "594181539.222751"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1123"
+            endingLineNumber = "1123"
+            landmarkName = "-resultWriteCardResultsForResult:imsi:iccid:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9A20E151-9915-4CCF-8BF3-6CB7D32E878E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PhoneWorld/Classes/WhitePrepareOpen/ViewController/AgentWriteAndChooseViewController.m"
+            timestampString = "594181539.223016"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1313"
+            endingLineNumber = "1313"
+            landmarkName = "-ReadICCIDIMSIsuccessBack:withData:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A95AE51E-BCDE-469A-915C-B2AA0ED5DDA0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PhoneWorld/Classes/WhitePrepareOpen/ViewController/AgentWriteAndChooseViewController.m"
+            timestampString = "594181539.223289"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1006"
+            endingLineNumber = "1006"
+            landmarkName = "-SRConnectedDevicesForPeripheral:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "36B05442-7BE6-492A-B2FF-BB98F8DF6FB6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PhoneWorld/Classes/WhitePrepareOpen/ViewController/AgentWriteAndChooseViewController.m"
+            timestampString = "594181539.223562"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1011"
+            endingLineNumber = "1011"
+            landmarkName = "-SRConnectedDevicesForPeripheral:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EE8325B1-6763-426C-B387-61AC6AA74CBE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PhoneWorld/Classes/WhitePrepareOpen/ViewController/AgentWriteAndChooseViewController.m"
+            timestampString = "594181539.223824"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1013"
+            endingLineNumber = "1013"
+            landmarkName = "-SRConnectedDevicesForPeripheral:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "62FDB82D-D803-42F4-AADF-E6316AF45599"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PhoneWorld/Classes/WhitePrepareOpen/ViewController/WhitePrepareOpenFourViewController.m"
+            timestampString = "594894322.437995"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "137"
+            endingLineNumber = "137"
+            landmarkName = "-changeScanType"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
+         <BreakpointContent
+            uuid = "5D438882-16CA-4D2F-99DD-FC3D76A00B92"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            scope = "1"
+            stopOnStyle = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "98EDEC09-9395-4853-B1C7-27D149CE2C9F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PhoneWorld/Classes/Main/WebUtils.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1839"
+            endingLineNumber = "1839"
+            landmarkName = "WebUtils"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C900A5F5-F2B7-4A97-915E-F3A457BF868F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PhoneWorld/Classes/Main/WebUtils.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1840"
+            endingLineNumber = "1840"
+            landmarkName = "+agency_2019ServiceProductWithParams:andCallback:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9A966EB5-2419-4A0C-9610-F3D5CEC4B999"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PhoneWorld/Classes/OrderInquiry(&#x8ba2;&#x5355;&#x67e5;&#x8be2;)/View/STopOrderDetailView.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "-setRechargeListModel:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B1A15890-03B3-4AFB-BC65-7F8F52692FBE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PhoneWorld/Classes/AccountManagement/Controller/TopCallMoneyViewController.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "-viewDidLoad"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2EF85B76-4C06-4CB7-B460-B85BC6124AB6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PhoneWorld/Classes/Home/Controller/RedBagFillInfoVC.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "312"
+            endingLineNumber = "312"
+            landmarkName = "-discloseTheInformationForFaceImageURLs:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

@@ -1,0 +1,172 @@
+//
+//  PrefixHeader.pch
+//  Student
+//
+//  Created by 刘岑颖 on 16/9/23.
+//  Copyright © 2016年 刘岑颖. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+#import "UILabel+Extension.h"
+//现在是测试！！！！！！！！！！
+#define mainPath @"http://121.46.26.224:8088/newagency/AgencyInterface"
+
+//现在是正式！！！！！！！！！！
+//#define mainPath @"http://121.46.26.224:8080/newagency/AgencyInterface"
+
+
+#define PX_WIDTH [UIScreen mainScreen].bounds.size.width/375.f
+
+#define kButton_bottom  (kDevice_Is_iPhoneX ? 36 : 5)
+#define kDevice_Is_iPhoneX (kIphoneSafeAreaInsets.bottom > 0)
+#define kIphoneSafeAreaInsets ([UIDevice currentDevice].systemVersion.doubleValue >= 11.0 ? \
+_Pragma("clang diagnostic push")\
+_Pragma("clang diagnostic ignored \"-Wunguarded-availability-new\"")\
+[UIApplication sharedApplication].delegate.window.safeAreaInsets \
+_Pragma("clang diagnostic pop") \
+: UIEdgeInsetsZero)
+
+#define Navi(vc) [[UINavigationController alloc] initWithRootViewController:vc]
+
+#define screenWidth [UIScreen mainScreen].bounds.size.width
+#define screenHeight [UIScreen mainScreen].bounds.size.height
+
+#define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
+#define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+
+#define kMargin 10
+
+#define kRGBA(r,g,b,a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
+#define COLOR_BACKGROUND [Utils colorRGB:@"#f9f9f9"]
+
+//236 108 0
+#define MainColor [UIColor colorWithRed:236/255.0 green:108/255.0 blue:0/255.0 alpha:1]
+#define textfontImage 14
+#define textfont8 12
+#define textfont10 10
+#define textfont11 11
+#define textfont12 14
+#define textfont15 15
+#define textfont14 14
+#define textfont16 16
+#define textfont17 17
+#define textfont18 18
+#define textfont20 20
+#define textfont30 30
+
+/*自适应后的字体大小*/
+#define font10 [UIFont systemFontOfSize:10 * getScale]
+#define font11 [UIFont systemFontOfSize:11 * getScale]
+#define font12 [UIFont systemFontOfSize:12 * getScale]
+#define font13 [UIFont systemFontOfSize:13 * getScale]
+#define font14 [UIFont systemFontOfSize:14 * getScale]
+#define font15 [UIFont systemFontOfSize:15 * getScale]
+#define font16 [UIFont systemFontOfSize:16 * getScale]
+#define font17 [UIFont systemFontOfSize:17 * getScale]
+#define font18 [UIFont systemFontOfSize:18 * getScale]
+#define font20 [UIFont systemFontOfSize:20 * getScale]
+#define font30 [UIFont systemFontOfSize:30 * getScale]
+
+#define kIPhoneSafeButton_bottom    (IS_iPhoneX ? 36 : 5)
+#define IS_iPhoneX (kIPhoneSafeAreaInsets.bottom > 0)
+//  iPhoneX的安全inset
+#define kIPhoneSafeAreaInsets ([UIDevice currentDevice].systemVersion.floatValue >= 11.0 ? \
+_Pragma("clang diagnostic push")\
+_Pragma("clang diagnostic ignored \"-Wunguarded-availability-new\"")\
+[UIApplication sharedApplication].delegate.window.safeAreaInsets \
+_Pragma("clang diagnostic pop") \
+: UIEdgeInsetsZero)
+
+//iphone6尺寸
+#define get6W(w) (((w)/375.0f) * [[UIScreen mainScreen] bounds].size.width)
+#define get6H(w) (((w)/667.0f) * [[UIScreen mainScreen] bounds].size.height)
+// 状态栏高度 X：44    非X：20
+#define kStatusBarHeight [[UIApplication sharedApplication] statusBarFrame].size.height
+// 导航栏高度
+#define kNavigationBarHeight 44.0
+// TabBar高度 X：49   非X：49 + 34 = 83
+#define kTabBarHeight ([[UIApplication sharedApplication] statusBarFrame].size.height > 20 ? 83 : 49)
+#define kTopHeight (kStatusBarHeight + kNavigationBarHeight)
+// X底部弧度部分高度
+#define kXBottomHeight ([[UIApplication sharedApplication] statusBarFrame].size.height > 20 ? 34 : 0)
+
+#define RECORD_MAX_TIME 10.0           //最长录制时间
+#define TIMER_INTERVAL 0.05         //计时器刷新频率
+#define VIDEO_FOLDER @"videoFolder" //视频录制存放文件夹
+
+#define kSetImage(imageName)   [UIImage imageNamed:imageName]
+#define kSetColor(colorString) [UIColor colorWithHexColorString:colorString]
+
+#import <AddressPick/AddressPick.h>
+#import <PNChart.h>
+//#define MAS_SHORTHAND_GLOBALS
+#import <Masonry.h>
+#import <UIImageView+WebCache.h>
+#import <MBProgressHUD.h>
+#import <SDImageCache.h>
+#import <UIImageView+UIActivityIndicatorForSDWebImage.h>
+#import <SDCycleScrollView.h>
+#import "UIViewExt.h"
+#import "Utils.h"
+#import "UIView+Toast.h"
+#import <IQKeyboardManager.h>
+#import <UIImageView+WebCache.h>
+#import "UIView+ORGetController.h"
+#import "PhotoBroswerVC.h"
+#import <CoreTelephony/CTTelephonyNetworkInfo.h>
+#import <CoreTelephony/CTCarrier.h>
+#import <CoreBluetooth/CoreBluetooth.h>
+#import "WebUtils.h"
+#import "UIImage+Extension.h"
+
+#import <MJRefresh.h>
+#import <ReactiveCocoa/ReactiveCocoa.h>
+
+#import <FMDatabase.h>
+#import <FMDatabaseQueue.h>
+#import <AFNetworkReachabilityManager.h>
+#import <sqlite3.h>
+
+#import <AlipaySDK/AlipaySDK.h>//支付宝支付
+
+#import "WXApi.h"//微信支付
+#import "WXApiManager.h"
+#import "WXApiRequestHandler.h"
+#import "WXApiResponseHandler.h"
+
+#import "RACmetamacros.h"
+#import "RACEXTScope.h"
+#import "UIColor+Extend.h"
+#import <NSObject+YYModel.h>
+#import "UIAlertController+ALTapDismiss.h"
+
+#define getScale [Utils getCurrentScale]
+
+typedef enum : NSUInteger {
+    refreshing,
+    loading
+} requestType;
+
+typedef enum : NSUInteger {
+    ChengKa,
+    BaiKa,
+    GuoHu,
+    BuKa,
+    XieKa
+} CardDetailType;
+
+
+//支付宝支付
+#define appScheme @"a2016111602862870"
+
+//二期
+
+#import "FACallBackBlock.h"
+#import "Struct.h"
+
+#define IS_EMPTY(str) ((!str)||str.length==0)
+
+#define WEAK_SELF  __weak __typeof(&*self)weakSelf = self;
+
+#endif /* PrefixHeader_pch */
