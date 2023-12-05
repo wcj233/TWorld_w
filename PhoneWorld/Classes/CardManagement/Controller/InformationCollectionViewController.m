@@ -9,7 +9,6 @@
 #import "InformationCollectionViewController.h"
 #import "InformationCollectionView.h"
 #import "SettlementDetailViewController.h"
-#import "CameraViewController.h"
 #import "FMFileVideoController.h"
 
 #import <STIDCardReader/STIDCardReader.h>//蓝牙读身份证
@@ -27,8 +26,6 @@
 
 #if TARGET_IPHONE_SIMULATOR//模拟器
 #elif TARGET_OS_IPHONE//真机
-#import "CameraViewController.h"
-#import "WintoneCardOCR.h"
 #import <AipOcrSdk/AipOcrSdk.h>
 
 #endif
@@ -86,13 +83,6 @@ CBCentralManagerDelegate>{
 @property (strong, nonatomic) NSString *typeName;
 
 @property (nonatomic) FailedView *processView;
-
-
-#if TARGET_IPHONE_SIMULATOR//模拟器
-#elif TARGET_OS_IPHONE//真机
-
-@property (strong, nonatomic) WintoneCardOCR *cardRecog;
-#endif
 
 //3代蓝牙视图
 @property (nonatomic, retain) NSIndexPath *selectedIndexPath;
@@ -157,8 +147,6 @@ CBCentralManagerDelegate>{
         UIImage *orignalImage = [UIImage imageNamed:@"font2"];
         orignalImage = [orignalImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:orignalImage style:UIBarButtonItemStylePlain target:self action:nil];
-        //扫描
-        [self performSelectorInBackground:@selector(initRecog) withObject:nil];
 //        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(scanForInformationAction) name:@"scanForInformation" object:nil];
     }
     [self startAction];
@@ -452,57 +440,10 @@ CBCentralManagerDelegate>{
     }];
 }
 
-#pragma mark - 扫描 -----------scan----------
-
-- (void) initCameraWithRecogOrientation: (RecogOrientation)recogOrientation
-{
-    CameraViewController *cameraVC = [[CameraViewController alloc] init];
-    cameraVC.recogType = self.cardType;
-    cameraVC.resultCount = self.resultCount;
-    cameraVC.typeName = self.typeName;
-    cameraVC.recogOrientation = recogOrientation;
-    
-    __block __weak InformationCollectionViewController *weakself = self;
-    
-    [cameraVC setResultBlock:^(NSString *result) {
-        
-        //得到结果之后
-        
-        NSArray *array = [result componentsSeparatedByString:@"\n"];
-        InputView *nameIV = weakself.informationCollectionView.inputViews[0];
-        NSString *nameString = [array.firstObject componentsSeparatedByString:@":"].lastObject;
-        nameIV.textField.text = nameString;
-        
-        InputView *numberIV = weakself.informationCollectionView.inputViews[1];
-        NSString *numberString = [array[5] componentsSeparatedByString:@":"].lastObject;
-        numberIV.textField.text = numberString;
-        
-        NSString *placeString = [array[4] componentsSeparatedByString:@":"].lastObject;
-        self.informationCollectionView.addressView.addressTextView.text = placeString;
-        self.informationCollectionView.addressView.addressPlaceholderLabel.hidden = YES;
-        
-    }];
-    
-    [self.navigationController pushViewController:cameraVC animated:YES];
-}
-
 #if TARGET_IPHONE_SIMULATOR//模拟器
 #elif TARGET_OS_IPHONE//真机
-//初始化核心
-- (void) initRecog
-{
-    NSDate *before = [NSDate date];
-    self.cardRecog = [[WintoneCardOCR alloc] init];
-    /*提示：该开发码和项目中的授权仅为演示用，客户开发时请替换该开发码及项目中Copy Bundle Resources 中的.lsc授权文件*/
-    
-    //6KAD5PY65LIW55W   话机世界的
-    
-    int intRecog = [self.cardRecog InitIDCardWithDevcode:@"6KAD5PY65LIW55W" recogLanguage:0];
-    NSLog(@"intRecog = %d",intRecog);
-    NSTimeInterval time = [[NSDate date] timeIntervalSinceDate:before];
-    NSLog(@"%f", time);
-}
 
+//扫描回调
 - (void)configCallback {
     __weak typeof(self) weakSelf = self;
     

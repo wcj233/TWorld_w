@@ -348,7 +348,6 @@
 		8AD329331E49A96700A87910 /* thocr_vl_province.lib in Resources */ = {isa = PBXBuildFile; fileRef = 8AD3291B1E49A96700A87910 /* thocr_vl_province.lib */; };
 		8AD329401E49A9C700A87910 /* back_camera_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AD329361E49A9C700A87910 /* back_camera_btn@2x.png */; };
 		8AD329411E49A9C700A87910 /* back_camera_btn@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AD329371E49A9C700A87910 /* back_camera_btn@3x.png */; };
-		8AD329421E49A9C700A87910 /* CameraViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8AD329391E49A9C700A87910 /* CameraViewController.mm */; };
 		8AD329431E49A9C700A87910 /* flash_camera_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AD3293A1E49A9C700A87910 /* flash_camera_btn@2x.png */; };
 		8AD329441E49A9C700A87910 /* flash_camera_btn@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AD3293B1E49A9C700A87910 /* flash_camera_btn@3x.png */; };
 		8AD329451E49A9C700A87910 /* OverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AD3293D1E49A9C700A87910 /* OverView.m */; };
@@ -1123,11 +1122,8 @@
 		8AD329191E49A96700A87910 /* thocr_vl_all.lib */ = {isa = PBXFileReference; lastKnownFileType = file; path = thocr_vl_all.lib; sourceTree = "<group>"; };
 		8AD3291A1E49A96700A87910 /* thocr_vl_digit_capitals.lib */ = {isa = PBXFileReference; lastKnownFileType = file; path = thocr_vl_digit_capitals.lib; sourceTree = "<group>"; };
 		8AD3291B1E49A96700A87910 /* thocr_vl_province.lib */ = {isa = PBXFileReference; lastKnownFileType = file; path = thocr_vl_province.lib; sourceTree = "<group>"; };
-		8AD3291C1E49A96700A87910 /* WintoneCardOCR.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WintoneCardOCR.h; sourceTree = "<group>"; };
 		8AD329361E49A9C700A87910 /* back_camera_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back_camera_btn@2x.png"; sourceTree = "<group>"; };
 		8AD329371E49A9C700A87910 /* back_camera_btn@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back_camera_btn@3x.png"; sourceTree = "<group>"; };
-		8AD329381E49A9C700A87910 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
-		8AD329391E49A9C700A87910 /* CameraViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CameraViewController.mm; sourceTree = "<group>"; };
 		8AD3293A1E49A9C700A87910 /* flash_camera_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flash_camera_btn@2x.png"; sourceTree = "<group>"; };
 		8AD3293B1E49A9C700A87910 /* flash_camera_btn@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flash_camera_btn@3x.png"; sourceTree = "<group>"; };
 		8AD3293C1E49A9C700A87910 /* OverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverView.h; sourceTree = "<group>"; };
@@ -2900,7 +2896,6 @@
 				8AD329191E49A96700A87910 /* thocr_vl_all.lib */,
 				8AD3291A1E49A96700A87910 /* thocr_vl_digit_capitals.lib */,
 				8AD3291B1E49A96700A87910 /* thocr_vl_province.lib */,
-				8AD3291C1E49A96700A87910 /* WintoneCardOCR.h */,
 			);
 			name = Resource;
 			path = ../../Resource;
@@ -2922,8 +2917,6 @@
 			children = (
 				8AD329361E49A9C700A87910 /* back_camera_btn@2x.png */,
 				8AD329371E49A9C700A87910 /* back_camera_btn@3x.png */,
-				8AD329381E49A9C700A87910 /* CameraViewController.h */,
-				8AD329391E49A9C700A87910 /* CameraViewController.mm */,
 				8AD3293A1E49A9C700A87910 /* flash_camera_btn@2x.png */,
 				8AD3293B1E49A9C700A87910 /* flash_camera_btn@3x.png */,
 				8AD3293C1E49A9C700A87910 /* OverView.h */,
@@ -3549,7 +3542,6 @@
 				8AF5802E1EE4ED6C006C8B67 /* SOrderViewController.m in Sources */,
 				4CE4A4A423823B6F00194826 /* WriteCardOrderDetailsModel.m in Sources */,
 				8AF1CB031EC145EC0055BBA0 /* NormalShowCell.m in Sources */,
-				8AD329421E49A9C700A87910 /* CameraViewController.mm in Sources */,
 				8AF1CBA21EC191B30055BBA0 /* LiangCell.m in Sources */,
 				8A9962151E63DB830047ED6D /* LOrderViewController.m in Sources */,
 				8A6CBF291DB0A5AD002625E8 /* ProposeViewController.m in Sources */,

@@ -29,12 +29,9 @@
 #import "BaiduMapTool.h"
 #import "SearchLocationViewController.h"
 #import <Photos/Photos.h>
-#import "CameraViewController.h"
 #import "FailedView.h"
 #if TARGET_IPHONE_SIMULATOR//模拟器
 #elif TARGET_OS_IPHONE//真机
-#import "CameraViewController.h"
-#import "WintoneCardOCR.h"
 #import <AipOcrSdk/AipOcrSdk.h>
 
 #endif
@@ -76,8 +73,6 @@
 #if TARGET_IPHONE_SIMULATOR//模拟器
 #elif TARGET_OS_IPHONE//真机
 
-@property (strong, nonatomic) WintoneCardOCR *cardRecog;
-
 #endif
 @property (assign, nonatomic) int cardType;
 @property (assign, nonatomic) int resultCount;
@@ -101,7 +96,6 @@
     
     self.cardType = 2;//身份证
     self.resultCount = 7;
-    [self initRecog];
     
     @WeakObj(self);
     [[BaiduMapTool sharedInstance]workSignRequestOnceLocationWithSuccessBlock:^(CLPlacemark *placemark) {
@@ -999,21 +993,8 @@
 
 #if TARGET_IPHONE_SIMULATOR//模拟器
 #elif TARGET_OS_IPHONE//真机
-//初始化核心
-- (void) initRecog
-{
-    NSDate *before = [NSDate date];
-    self.cardRecog = [[WintoneCardOCR alloc] init];
-    /*提示：该开发码和项目中的授权仅为演示用，客户开发时请替换该开发码及项目中Copy Bundle Resources 中的.lsc授权文件*/
-    
-    //6KAD5PY65LIW55W   话机世界的
-    
-    int intRecog = [self.cardRecog InitIDCardWithDevcode:@"6KAD5PY65LIW55W" recogLanguage:0];
-    NSLog(@"intRecog = %d",intRecog);
-    NSTimeInterval time = [[NSDate date] timeIntervalSinceDate:before];
-    NSLog(@"%f", time);
-}
 
+//扫描回调
 - (void)configCallback {
     __weak typeof(self) weakSelf = self;
     
@@ -1112,81 +1093,6 @@
                                                  withOptions:nil
                                               successHandler:_successHandler
                                                  failHandler:_failHandler];
-    
-    return;
-    
-    //设置导入识别模式和证件类型
-    [self.cardRecog setParameterWithMode:0 CardType:self.cardType];
-    //图片预处理 7－裁切+倾斜校正+旋转
-    [self.cardRecog processImageWithProcessType:7 setType:1];
-    
-    //导入图片数据
-    int loadImage = [self.cardRecog LoadImageToMemoryWithFileName:_imagePath Type:0];
-    
-    NSLog(@"loadImage = %d", loadImage);
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
-    NSString *caches = paths[0];
-    NSString *imagepath = [caches stringByAppendingPathComponent:@"image.jpg"];
-    NSString *headImagePath = [caches stringByAppendingPathComponent:@"head.jpg"];
-    
-    if (self.cardType != 3000) {//***注意：机读码需要自己重新设置类型来识别
-        if (self.cardType == 2) {
-            
-            //自动分辨二代证正反面
-            [self.cardRecog autoRecogChineseID];
-        }else{
-            //其他证件
-            [self.cardRecog recogIDCardWithMainID:self.cardType];
-        }
-        //非机读码，保存头像
-        [self.cardRecog saveHeaderImage:headImagePath];
-        
-        //获取识别结果
-        NSString *allResult = @"";
-        [self.cardRecog saveImage:imagepath];
-        _cropImagePath = imagepath;
-        
-        for (int i = 1; i < self.resultCount; i++) {
-            
-            //获取字段值
-            NSString *field = [self.cardRecog GetFieldNameWithIndex:i];
-            //获取字段结果
-            NSString *result = [self.cardRecog GetRecogResultWithIndex:i];
-            NSLog(@"%@:%@\n",field, result);
-            if(field != NULL){
-                allResult = [allResult stringByAppendingString:[NSString stringWithFormat:@"%@:%@\n", field, result]];
-            }
-        }
-        if (![allResult isEqualToString:@""] && [allResult containsString:@"公民身份号码"]) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self.processView removeFromSuperview];
-                
-                //得到结果之后
-                NSArray *array = [allResult componentsSeparatedByString:@"\n"];
-                NSArray *infos = self.infoModelArray[0];
-                
-                RedBagFillInfoModel *nameModel = infos[0];
-                NSString *nameString = [array.firstObject componentsSeparatedByString:@":"].lastObject;
-                nameModel.content = nameString;
-                
-                RedBagFillInfoModel *verIdModel = infos[1];
-                NSString *idString = [array[5] componentsSeparatedByString:@":"].lastObject;
-                verIdModel.content = idString;
-                
-                RedBagFillInfoModel *addressModel = infos[2];
-                NSString *addressString = [array[4] componentsSeparatedByString:@":"].lastObject;
-                addressModel.content = addressString;
-                
-                [self.tableView reloadData];
-            });
-            
-        }else{
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self.processView removeFromSuperview];
-                [Utils toastview:@"身份证照片读取失败！"];
-            });
-        }
-    }
 }
 #endif
 
