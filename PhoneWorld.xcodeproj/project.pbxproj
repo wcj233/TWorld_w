@@ -48,8 +48,6 @@
 		36DCAC622106CBE600E0378F /* EstablishDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DCAC612106CBE600E0378F /* EstablishDetailViewController.m */; };
 		36EB9C95211D604D00F88397 /* WatermarkMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 36EB9C94211D604D00F88397 /* WatermarkMaker.m */; };
 		4C386C0523167D750081CC38 /* WriteCardNumberDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C386C0423167D750081CC38 /* WriteCardNumberDetails.m */; };
-		4C386C09231E68C40081CC38 /* SRIDCardReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C386C08231E68C40081CC38 /* SRIDCardReader.framework */; };
-		4C386C0B231E69370081CC38 /* libReliableBurstData_arm64.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C386C0A231E69370081CC38 /* libReliableBurstData_arm64.a */; };
 		4C386C0E231F59E20081CC38 /* ZSYPopoverListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C386C0C231F59E10081CC38 /* ZSYPopoverListView.m */; };
 		4C4DE50C23B1BE7F00785DD6 /* RightsOrderListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4DE50B23B1BE7F00785DD6 /* RightsOrderListModel.m */; };
 		4C65B9842313DD5400CFD891 /* WriteCardModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C65B9832313DD5400CFD891 /* WriteCardModel.m */; };
@@ -436,6 +434,9 @@
 		93271EF82B1F18B100E76C96 /* IdcardQuality.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93271EF62B1F18B100E76C96 /* IdcardQuality.framework */; };
 		93271EF92B1F18BB00E76C96 /* IdcardQuality.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 93271EF62B1F18B100E76C96 /* IdcardQuality.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		93271EFA2B1F18C600E76C96 /* AipBase.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 93271EF52B1F18B100E76C96 /* AipBase.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		93271EFF2B1F7B4400E76C96 /* SRIDCardReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93271EFD2B1F7B4400E76C96 /* SRIDCardReader.framework */; };
+		93271F002B1F7B4400E76C96 /* libReliableBurstData_arm64.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 93271EFE2B1F7B4400E76C96 /* libReliableBurstData_arm64.a */; };
+		93271F032B200F1E00E76C96 /* ChooseIDTypeAlertV.m in Sources */ = {isa = PBXBuildFile; fileRef = 93271F022B200F1E00E76C96 /* ChooseIDTypeAlertV.m */; };
 		932C434726788F9000C0B976 /* RectManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 932C434526788F9000C0B976 /* RectManager.m */; };
 		932C434D267890B300C0B976 /* UIAlertController+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 932C434C267890B200C0B976 /* UIAlertController+Extend.m */; };
 		932C43542678B82000C0B976 /* JQIDCardScaningView.m in Sources */ = {isa = PBXBuildFile; fileRef = 932C434F2678B81E00C0B976 /* JQIDCardScaningView.m */; };
@@ -569,8 +570,6 @@
 		36EB9C94211D604D00F88397 /* WatermarkMaker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WatermarkMaker.m; sourceTree = "<group>"; };
 		4C386C0323167D750081CC38 /* WriteCardNumberDetails.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WriteCardNumberDetails.h; sourceTree = "<group>"; };
 		4C386C0423167D750081CC38 /* WriteCardNumberDetails.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WriteCardNumberDetails.m; sourceTree = "<group>"; };
-		4C386C08231E68C40081CC38 /* SRIDCardReader.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SRIDCardReader.framework; sourceTree = "<group>"; };
-		4C386C0A231E69370081CC38 /* libReliableBurstData_arm64.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libReliableBurstData_arm64.a; sourceTree = "<group>"; };
 		4C386C0C231F59E10081CC38 /* ZSYPopoverListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSYPopoverListView.m; sourceTree = "<group>"; };
 		4C386C0D231F59E20081CC38 /* ZSYPopoverListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSYPopoverListView.h; sourceTree = "<group>"; };
 		4C4DE50A23B1BE7F00785DD6 /* RightsOrderListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RightsOrderListModel.h; sourceTree = "<group>"; };
@@ -1283,6 +1282,10 @@
 		93271EF12B1F15BC00E76C96 /* AipOcrSdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AipOcrSdk.framework; sourceTree = "<group>"; };
 		93271EF52B1F18B100E76C96 /* AipBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AipBase.framework; sourceTree = "<group>"; };
 		93271EF62B1F18B100E76C96 /* IdcardQuality.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IdcardQuality.framework; sourceTree = "<group>"; };
+		93271EFD2B1F7B4400E76C96 /* SRIDCardReader.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SRIDCardReader.framework; sourceTree = "<group>"; };
+		93271EFE2B1F7B4400E76C96 /* libReliableBurstData_arm64.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libReliableBurstData_arm64.a; sourceTree = "<group>"; };
+		93271F012B200F1E00E76C96 /* ChooseIDTypeAlertV.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChooseIDTypeAlertV.h; sourceTree = "<group>"; };
+		93271F022B200F1E00E76C96 /* ChooseIDTypeAlertV.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChooseIDTypeAlertV.m; sourceTree = "<group>"; };
 		932C434526788F9000C0B976 /* RectManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RectManager.m; sourceTree = "<group>"; };
 		932C434626788F9000C0B976 /* RectManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RectManager.h; sourceTree = "<group>"; };
 		932C434B267890B200C0B976 /* UIAlertController+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+Extend.h"; sourceTree = "<group>"; };
@@ -1363,7 +1366,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C386C0B231E69370081CC38 /* libReliableBurstData_arm64.a in Frameworks */,
 				8A52CD481DBF6CB100D9DC91 /* CoreBluetooth.framework in Frameworks */,
 				F22DDD42225C7B6400B653D7 /* libBLEGcouple.a in Frameworks */,
 				8AD329571E49B00200A87910 /* libiconv.tbd in Frameworks */,
@@ -1382,14 +1384,15 @@
 				8AADA1C81DD2C12D000A5C42 /* libsqlite3.tbd in Frameworks */,
 				8A8C10B01DD41045004B7E39 /* libWeChatSDK.a in Frameworks */,
 				8A1203FC1DCB39A90011A9C3 /* CoreMotion.framework in Frameworks */,
-				4C386C09231E68C40081CC38 /* SRIDCardReader.framework in Frameworks */,
 				8A1203FA1DCB39A00011A9C3 /* CFNetwork.framework in Frameworks */,
+				93271EFF2B1F7B4400E76C96 /* SRIDCardReader.framework in Frameworks */,
 				8A1203F81DCB399A0011A9C3 /* Foundation.framework in Frameworks */,
 				8A1203F61DCB39920011A9C3 /* UIKit.framework in Frameworks */,
 				8A1203F21DCB39860011A9C3 /* CoreText.framework in Frameworks */,
 				93271EF72B1F18B100E76C96 /* AipBase.framework in Frameworks */,
 				8A1203F01DCB397E0011A9C3 /* QuartzCore.framework in Frameworks */,
 				8A52CD461DBF698C00D9DC91 /* CoreTelephony.framework in Frameworks */,
+				93271F002B1F7B4400E76C96 /* libReliableBurstData_arm64.a in Frameworks */,
 				8A05FD741DF8F37800A01F3A /* AddressPick.framework in Frameworks */,
 				8A1203EA1DCB39570011A9C3 /* libc++.tbd in Frameworks */,
 				93271EF82B1F18B100E76C96 /* IdcardQuality.framework in Frameworks */,
@@ -1868,8 +1871,8 @@
 		8A49D8601DACCB4600A1D650 = {
 			isa = PBXGroup;
 			children = (
-				4C386C0A231E69370081CC38 /* libReliableBurstData_arm64.a */,
-				4C386C08231E68C40081CC38 /* SRIDCardReader.framework */,
+				93271EFE2B1F7B4400E76C96 /* libReliableBurstData_arm64.a */,
+				93271EFD2B1F7B4400E76C96 /* SRIDCardReader.framework */,
 				9313732E2AF490BF002AD66C /* STIDCardReader.framework */,
 				8AD96E271DACCC640080CC8C /* Podfile */,
 				8A49D86B1DACCB4600A1D650 /* PhoneWorld */,
@@ -2122,6 +2125,8 @@
 				8A08C1461E4DA47E00FB185B /* ChooseWayView.m */,
 				8A90E8F61DB61FC2004ECA62 /* InformationCollectionView.h */,
 				8A90E8F71DB61FC2004ECA62 /* InformationCollectionView.m */,
+				93271F012B200F1E00E76C96 /* ChooseIDTypeAlertV.h */,
+				93271F022B200F1E00E76C96 /* ChooseIDTypeAlertV.m */,
 				8A9698991DB70FE9000841BA /* SettlementDetailView.h */,
 				8A96989A1DB70FE9000841BA /* SettlementDetailView.m */,
 				8A96989F1DB727E9000841BA /* WhiteCardView.h */,
@@ -3650,6 +3655,7 @@
 				8A6CBF661DB0C939002625E8 /* OrderTwoView.m in Sources */,
 				8AF7CDA21FD7FC55002371FE /* BondModel.m in Sources */,
 				8AFC21BF1DC6F1DC00D73AFE /* RegisterModel.m in Sources */,
+				93271F032B200F1E00E76C96 /* ChooseIDTypeAlertV.m in Sources */,
 				8AADA1CF1DD30717000A5C42 /* NormalTableViewCell.m in Sources */,
 				8AB87EB41DB1DF650045CB90 /* CreatePayPasswordViewController.m in Sources */,
 				8A90E8EF1DB61747004ECA62 /* ChoosePackageView.m in Sources */,

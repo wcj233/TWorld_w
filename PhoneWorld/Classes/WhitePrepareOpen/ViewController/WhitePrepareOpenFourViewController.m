@@ -18,6 +18,7 @@
 #import "WhitePrepareOpenOneViewController.h"
 #import "LiangListViewController.h"
 #import "NewFinishedCardSignViewController.h"
+#import "ChooseIDTypeAlertV.h"
 
 #if TARGET_IPHONE_SIMULATOR//模拟器
 #elif TARGET_OS_IPHONE//真机
@@ -146,29 +147,26 @@ CBCentralManagerDelegate> {
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear: animated];
     
-    [self chooseCardTypeAction];
-}
-
-- (void)chooseCardTypeAction {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"证件类型" message:@"" preferredStyle:UIAlertControllerStyleAlert];
-    
-    UIAlertAction *a1 = [UIAlertAction actionWithTitle:@"居民身份证" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        self.cardType = 1;
+    ChooseIDTypeAlertV *v = [[ChooseIDTypeAlertV alloc] init];
+    [[UIApplication sharedApplication].delegate.window addSubview:v];
+    [v mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(0);
     }];
-    UIAlertAction *a2 = [UIAlertAction actionWithTitle:@"外国人永久居留身份证" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        self.cardType = 2;
-        
-        if (![self.typeString isEqualToString:@"写卡激活"]) {
-            [self changeScanType];
-        }else{
-            [self changeTipStyle];
+    [v showAnimation];
+    @WeakObj(self);
+    v.OkBlock = ^(NSInteger tag) {
+        @StrongObj(self);
+        self.cardType = tag;
+        if (tag == 2) {
+            if (![self.typeString isEqualToString:@"写卡激活"]) {
+                [self changeScanType];
+            }else{
+                [self changeTipStyle];
+            }
         }
-    }];
-    
-    [alert addAction:a1];
-    [alert addAction:a2];
-    
-    [self presentViewController:alert animated:YES completion:nil];
+        
+        self.fourView.cardType = tag;
+    };
 }
 
 //根据上一个界面传过来的值判断当前事识别仪还是扫描获取身份证信息
@@ -234,14 +232,6 @@ CBCentralManagerDelegate> {
             [[NSNotificationCenter defaultCenter] postNotificationName:@"ChooseImageViewRemoveImageAction" object:button];
         }
     }
-    
-//    NormalInputCell *idCell = [self.fourView.contentTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
-//    idCell.inputTextField.userInteractionEnabled = NO;
-//
-//    AddressCell *addressCell = [self.fourView.contentTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0]];
-//    addressCell.addressTextView.text = @"";
-//    addressCell.addressTextView.userInteractionEnabled = YES;
-//    addressCell.addressPlaceholderLabel.hidden = NO;
     
     self.fourView.isIDCardEnable = NO;
     self.fourView.infoArray = [NSMutableArray array];
@@ -316,8 +306,6 @@ CBCentralManagerDelegate> {
             //外国人
             [Utils toastview:@"识别证件信息失败，请手动录入"];
             self.fourView.isIDCardEnable = YES;
-            self.fourView.infoArray = [NSMutableArray arrayWithArray:@[@"", @"", @"中华人民共和国国家移民管理局"]];
-            
         }
     }
     
@@ -359,13 +347,21 @@ CBCentralManagerDelegate> {
     
     __block NSMutableDictionary *sendDictionary = [[NSMutableDictionary alloc] init];
     
-    if (self.fourView.infoArray.count == 3) {
+    if (self.fourView.infoArray.count == 3 && ![self.fourView.infoArray containsObject:@""]) {
         [sendDictionary setObject:self.fourView.infoArray[0] forKey:@"customerName"];
         [sendDictionary setObject:self.fourView.infoArray[1] forKey:@"certificatesNo"];
         [sendDictionary setObject:self.fourView.infoArray[2] forKey:@"address"];
     }else{
         [Utils toastview:@"请获取开户人信息"];
         return;
+    }
+    
+    if (self.cardType == 2) {
+        if (![self.fourView.infoArray[1] hasPrefix:@"9"]) {
+            [Utils toastview:@"请检查您输入的证件号是否正确"];
+            
+            return;
+        }
     }
     
     //固定的
@@ -1043,8 +1039,8 @@ CBCentralManagerDelegate> {
 
 #pragma mark -============= 3代蓝牙 事件 ================
 - (void)SRInit{
-    [idManager setUpAccount:@"test03" password:@"12315aA..1"];
-    idManager = [SRIDCardReader instanceWithManager];
+//    [idManager setUpAccount:@"test03" password:@"12315aA..1"];
+    idManager = [SRIDCardReader instanceWithManagerAccount:@"test03" password:@"12315aA..1" key:@""];
     idManager.delegate=self;
     [idManager setServerIP:@"59.41.39.51" andPort:6000];
     manager = [[CBCentralManager alloc]initWithDelegate:self queue:nil];

@@ -10,6 +10,7 @@
 #import "InformationCollectionView.h"
 #import "SettlementDetailViewController.h"
 #import "FMFileVideoController.h"
+#import "ChooseIDTypeAlertV.h"
 
 #import <STIDCardReader/STIDCardReader.h>//蓝牙读身份证
 //#define ERROR
@@ -122,25 +123,25 @@ CBCentralManagerDelegate>{
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear: animated];
     
-    [self chooseCardTypeAction];
-}
-
-- (void)chooseCardTypeAction {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"证件类型" message:@"" preferredStyle:UIAlertControllerStyleAlert];
-    
-    UIAlertAction *a1 = [UIAlertAction actionWithTitle:@"居民身份证" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        self.cardType = 1;
+    ChooseIDTypeAlertV *v = [[ChooseIDTypeAlertV alloc] init];
+    [[UIApplication sharedApplication].delegate.window addSubview:v];
+    [v mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(0);
     }];
-    UIAlertAction *a2 = [UIAlertAction actionWithTitle:@"外国人永久居留身份证" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        self.cardType = 2;
+    [v showAnimation];
+    @WeakObj(self);
+    v.OkBlock = ^(NSInteger tag) {
+        @StrongObj(self);
+        self.cardType = tag;
+        if (tag == 2) {
+            [self changeTipStyle];
+        }
         
-        [self changeTipStyle];
-    }];
-    
-    [alert addAction:a1];
-    [alert addAction:a2];
-    
-    [self presentViewController:alert animated:YES completion:nil];
+        InputView *v = self.informationCollectionView.inputViews[1];
+        v.cardType = tag;
+        
+        self.informationCollectionView.cardType = tag;
+    };
 }
 
 - (void)backAction {
@@ -809,8 +810,8 @@ CBCentralManagerDelegate>{
 
 #pragma mark -============= 3代蓝牙 事件 ================
 - (void)SRInit{
-    [idManager setUpAccount:@"test03" password:@"12315aA..1"];
-    idManager = [SRIDCardReader instanceWithManager];
+//    [idManager setUpAccount:@"test03" password:@"12315aA..1"];
+    idManager = [SRIDCardReader instanceWithManagerAccount:@"test03" password:@"12315aA..1" key:@""];
     idManager.delegate=self;
     [idManager setServerIP:@"59.41.39.51" andPort:6000];
     manager = [[CBCentralManager alloc]initWithDelegate:self queue:nil];

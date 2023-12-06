@@ -1017,8 +1017,8 @@ BleProtocol
 
 #pragma mark -============= 3代蓝牙 事件 ================
 - (void)SRInit{
-    [idManager setUpAccount:@"test03" password:@"12315aA..1"];
-    idManager = [SRIDCardReader instanceWithManager];
+//    [idManager setUpAccount:@"test03" password:@"12315aA..1"];
+    idManager = [SRIDCardReader instanceWithManagerAccount:@"test03" password:@"12315aA..1" key:@""];
     idManager.delegate=self;
     [idManager setServerIP:@"59.41.39.51" andPort:6000];
 //    manager = [[CBCentralManager alloc]initWithDelegate:self queue:nil];

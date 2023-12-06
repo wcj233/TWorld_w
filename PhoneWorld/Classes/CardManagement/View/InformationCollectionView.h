@@ -35,6 +35,7 @@
 @property(nonatomic, assign) BOOL isFaceCheck;
 @property (nonatomic) BOOL isFinished;
 @property(nonatomic, strong) NSString *typeString;
+@property(nonatomic, assign) int cardType; //普通还是外国人
 
 //是不是靓号
 

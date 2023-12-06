@@ -31,6 +31,7 @@
 @property (nonatomic) UIButton *openButton;
 
 @property (nonatomic, assign) BOOL isIDCardEnable;
+@property (nonatomic, assign) int cardType; //普通还是外国人
 
 @property (nonatomic) NSMutableArray *infoArray;
 @property(nonatomic, weak) id<WhitePrepareOpenFourViewDelegate> whitePrepareOpenFourViewDelegate;

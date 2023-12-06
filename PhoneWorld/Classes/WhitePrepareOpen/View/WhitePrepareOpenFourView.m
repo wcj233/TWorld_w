@@ -183,6 +183,7 @@ static NSString *warningText = @"1、本人正面免冠照片，用户头像占�
     }else{
         cell.inputTextField.delegate = self;
     }
+    cell.inputTextField.delegate = self;
     cell.leftLabel.text = leftTitleString;
     NSString *holderText = [NSString stringWithFormat:@"请输入%@",leftTitleString];
     
@@ -236,7 +237,16 @@ static NSString *warningText = @"1、本人正面免冠照片，用户头像占�
 
 - (void)textFieldDidEndEditing:(UITextField *)textField{
     if (self.infoArray.count == 3) {
-        [self.infoArray replaceObjectAtIndex:0 withObject:textField.text];
+        if ([textField.placeholder containsString:@"开户人姓名"]) {
+            [self.infoArray replaceObjectAtIndex:0 withObject:textField.text];
+        }
+        
+        if ([textField.placeholder containsString:@"证件号码"] && self.cardType == 2) {
+            [self.infoArray replaceObjectAtIndex:1 withObject:textField.text];
+            if (![textField.text hasPrefix:@"9"]) {
+                [Utils toastview:@"请检查您输入的证件号是否正确"];
+            }
+        }
     }
 }
 

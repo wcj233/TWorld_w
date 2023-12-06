@@ -14,4 +14,6 @@
 
 @property (nonatomic) UITextField *textField;
 
+@property (nonatomic, assign) int cardType; // 是普通身份证还是外国人
+
 @end

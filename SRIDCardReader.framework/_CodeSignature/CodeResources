@@ -4,17 +4,9 @@
 <dict>
 	<key>files</key>
 	<dict>
-		<key>Headers/BTReaderDriver.h</key>
-		<data>
-		xuEPWGcIAtHHDAE9VajjpkUPuwI=
-		</data>
 		<key>Headers/ByteUtil.h</key>
 		<data>
 		JUGGpVHAc0qFDlaaBz6VGwRvyqU=
-		</data>
-		<key>Headers/DataPackage.h</key>
-		<data>
-		ifaSJFgnW3ZqcLjlz3ePwofzDIA=
 		</data>
 		<key>Headers/HexUtil.h</key>
 		<data>
@@ -22,11 +14,7 @@
 		</data>
 		<key>Headers/SRIDCardReader.h</key>
 		<data>
-		edwqIkl5Sys2S+Qh7NzN8fDdXFc=
-		</data>
-		<key>Headers/btreader.h</key>
-		<data>
-		8hB2C6lBNbfveiKZVaf9Y9wjTFI=
+		es9VyxU6SghZeYnzX3gNAJ64H6E=
 		</data>
 		<key>Headers/sm4.h</key>
 		<data>
@@ -34,11 +22,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		7ZQwT6jv6NtZ13WMRDuVdyZR7mw=
-		</data>
-		<key>LICENSE</key>
-		<data>
-		ycUL1Gtpq6YuYcZdirCN0ejIOzg=
+		GfAotKoICZUm6vycuX29E8WeO1U=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -47,17 +31,6 @@
 	</dict>
 	<key>files2</key>
 	<dict>
-		<key>Headers/BTReaderDriver.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			xuEPWGcIAtHHDAE9VajjpkUPuwI=
-			</data>
-			<key>hash2</key>
-			<data>
-			eiY/GySBnUJ4JhuPKTujljj9RDeWQ9eQJLB0ugdSA00=
-			</data>
-		</dict>
 		<key>Headers/ByteUtil.h</key>
 		<dict>
 			<key>hash</key>
@@ -67,17 +40,6 @@
 			<key>hash2</key>
 			<data>
 			sRvs9YGcMlKPiKQhWKlam3yrQx5ff68yaxhvMwSLqw4=
-			</data>
-		</dict>
-		<key>Headers/DataPackage.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			ifaSJFgnW3ZqcLjlz3ePwofzDIA=
-			</data>
-			<key>hash2</key>
-			<data>
-			4s6axKyXNhC+JDgxz4vz/eZi4IRsktY42cXsHqb6wbA=
 			</data>
 		</dict>
 		<key>Headers/HexUtil.h</key>
@@ -95,22 +57,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			edwqIkl5Sys2S+Qh7NzN8fDdXFc=
+			es9VyxU6SghZeYnzX3gNAJ64H6E=
 			</data>
 			<key>hash2</key>
 			<data>
-			3jUSNrscV9xf1d3/p+L+Wurnkratl6CCHuCmitdzgWY=
-			</data>
-		</dict>
-		<key>Headers/btreader.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			8hB2C6lBNbfveiKZVaf9Y9wjTFI=
-			</data>
-			<key>hash2</key>
-			<data>
-			YrQtXdn6AfVosVaCh7mziUn7TZliEpBmy5pzbucB14Y=
+			oi+Q6We9I/lmebwY1otNftuVKV7C+JgdMywwoWGmdOU=
 			</data>
 		</dict>
 		<key>Headers/sm4.h</key>
@@ -122,17 +73,6 @@
 			<key>hash2</key>
 			<data>
 			UiJhJESEGn7L33c7hvh1Y/PtSCiEAaxLLOFdzBNc+p4=
-			</data>
-		</dict>
-		<key>LICENSE</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			ycUL1Gtpq6YuYcZdirCN0ejIOzg=
-			</data>
-			<key>hash2</key>
-			<data>
-			NW5CJe0HffJYaGeVeXhBBLG3pXUuusxzBKLU7A8Z6Wg=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

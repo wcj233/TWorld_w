@@ -194,6 +194,13 @@
                 return;
             }
         }
+        
+        if ([self.leftTitles[i] isEqualToString:@"证件号码"] && self.cardType == 2) {
+            if (![inputV.textField.text hasPrefix:@"9"]) {
+                [Utils toastview:@"请检查您输入的证件号是否正确"];
+                return;
+            }
+        }
     }
 
     if (self.addressView.addressTextView.text.length <= 0) {
