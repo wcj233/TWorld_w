@@ -160,7 +160,7 @@
     
     NSString *detailString = self.details[i];
     if (_watermark) {
-        if ([detailString isEqualToString:@"身份证正面照"]) {
+        if ([detailString isEqualToString:@"身份证正面照"] || [detailString isEqualToString:@"证件原件人像面"]) {
             
             imageV.hidden = NO;
             imageV.image = [WatermarkMaker watermarkImageForImage:image];;
@@ -224,7 +224,7 @@
                 if (granted) {
                     NSLog(@"Authorized");
                     
-                    if ([self.details[i] isEqualToString:@"身份证正面照"]) {
+                    if ([self.details[i] isEqualToString:@"身份证正面照"] || [self.details[i] isEqualToString:@"证件原件人像面"]) {
                         AVCaptureViewController *vc = [[AVCaptureViewController alloc] init];
                         vc.modalPresentationStyle = UIModalPresentationFullScreen;
                         vc.type = self.details[i];
@@ -250,7 +250,7 @@
                             }
                         };
                         [viewController presentViewController:vc animated:YES completion:nil];
-                    } else if([self.details[i] isEqualToString:@"身份证背面照"] || [self.details[i] isEqualToString:@"身份证反面照"]) {
+                    } else if([self.details[i] isEqualToString:@"身份证背面照"] || [self.details[i] isEqualToString:@"身份证反面照"]|| [self.details[i] isEqualToString:@"证件原件国徽面"]) {
                         JQAVCaptureViewController *vc = [[JQAVCaptureViewController alloc] init];
                         vc.modalPresentationStyle = UIModalPresentationFullScreen;
                         vc.backBlock = ^(UIImage *captureImage) {

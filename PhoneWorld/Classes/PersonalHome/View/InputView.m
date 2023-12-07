@@ -66,12 +66,4 @@
     return YES;
 }
 
-- (void)textFieldDidEndEditing:(UITextField *)textField {
-    if ([self.leftLabel.text isEqualToString:@"证件号码"] && self.cardType == 2) {
-        if (![textField.text hasPrefix:@"9"]) {
-            [Utils toastview:@"请检查您输入的证件号是否正确"];
-        }
-    }
-}
-
 @end

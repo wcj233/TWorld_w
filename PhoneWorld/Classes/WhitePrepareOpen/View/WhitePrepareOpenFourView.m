@@ -71,18 +71,18 @@ static NSString *warningText = @"1、本人正面免冠照片，用户头像占�
 
 - (ChooseImageView *)chooseImageView{
     if (_chooseImageView == nil) {
-        NSArray *arr = @[@"身份证正面照",@"身份证正面+卡板照",@"本人现场正面免冠照片"];
+        NSArray *arr = @[@"证件原件人像面",@"身份证正面+卡板照",@"本人现场正面免冠照片"];
         NSArray *buttonImages = @[@"正面照.png",@"卡板照.png",@"现场照.png"];
         if (self.isFaceVerify) {
             // 人脸开户
-//            arr = @[@"身份证正面照",@"身份证背面照",@"本人现场正面免冠照片"];
+//            arr = @[@"证件原件人像面",@"证件原件国徽面",@"本人现场正面免冠照片"];
 //            buttonImages = @[@"正面照.png",@"背面照.png",@"现场照.png"];
-            arr = @[@"身份证正面照",@"身份证正面照+卡板号码照片",@"本人现场正面免冠照片"];
+            arr = @[@"证件原件人像面",@"证件原件人像面+卡板号码照片",@"本人现场正面免冠照片"];
             buttonImages = @[@"正面照.png",@"卡板照.png",@"现场照.png"];
         }
         
         if ([self.typeString isEqualToString:@"写卡激活"]) {
-            arr = @[@"身份证正面照",@"身份证背面照",@"身份证正面照+卡板号码照片",@"本人现场正面免冠照片"];
+            arr = @[@"证件原件人像面",@"证件原件国徽面",@"证件原件人像面+卡板号码照片",@"本人现场正面免冠照片"];
             buttonImages = @[@"正面照.png",@"背面照.png",@"卡板照.png",@"现场照.png"];
         }
         
@@ -235,6 +235,23 @@ static NSString *warningText = @"1、本人正面免冠照片，用户头像占�
 
 #pragma mark - UITextFieldDelegate
 
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    if ([textField.placeholder containsString:@"证件号码"]) {
+        
+        NSString *futureString = [textField.text stringByReplacingCharactersInRange:range withString:string];
+        
+        if (string.length <= 0) {
+            return YES;
+        }
+        
+        if (futureString.length > 18) {
+            return NO;
+        }
+    }
+    
+    return YES;
+}
+
 - (void)textFieldDidEndEditing:(UITextField *)textField{
     if (self.infoArray.count == 3) {
         if ([textField.placeholder containsString:@"开户人姓名"]) {
@@ -243,9 +260,6 @@ static NSString *warningText = @"1、本人正面免冠照片，用户头像占�
         
         if ([textField.placeholder containsString:@"证件号码"] && self.cardType == 2) {
             [self.infoArray replaceObjectAtIndex:1 withObject:textField.text];
-            if (![textField.text hasPrefix:@"9"]) {
-                [Utils toastview:@"请检查您输入的证件号是否正确"];
-            }
         }
     }
 }

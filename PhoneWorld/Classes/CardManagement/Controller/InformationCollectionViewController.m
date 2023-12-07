@@ -118,10 +118,10 @@ CBCentralManagerDelegate>{
     //默认身份证
     self.cardType = 1;
     
+    [self showChooseCardTypeAction];
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear: animated];
+- (void)showChooseCardTypeAction {
     
     ChooseIDTypeAlertV *v = [[ChooseIDTypeAlertV alloc] init];
     [[UIApplication sharedApplication].delegate.window addSubview:v];
@@ -154,8 +154,14 @@ CBCentralManagerDelegate>{
         iv.textField.text = @"";
     }
     
-    self.informationCollectionView.addressView.addressTextView.text = @"";
-    self.informationCollectionView.addressView.addressPlaceholderLabel.hidden = NO;
+    if (self.cardType == 2 && _currentOpenMode == 1) {
+        //外国人+扫描
+        self.informationCollectionView.addressView.addressTextView.text = @"中华人民共和国国家移民管理局";
+        self.informationCollectionView.addressView.addressPlaceholderLabel.hidden = YES;
+    } else {
+        self.informationCollectionView.addressView.addressTextView.text = @"";
+        self.informationCollectionView.addressView.addressPlaceholderLabel.hidden = NO;
+    }
 }
 
 
@@ -416,16 +422,21 @@ CBCentralManagerDelegate>{
 }
 
 //扫描操作，接收通知进入
-- (void)scanForInformationAction{
-    
-    self.processView = [[FailedView alloc] initWithFrame:CGRectMake(0, 0, screenWidth, screenHeight) andTitle:@"正在扫描" andDetail:@"请耐心等待..." andImageName:@"icon_smile" andTextColorHex:@"#eb000c"];
-    [[UIApplication sharedApplication].keyWindow addSubview:self.processView];
+- (void)scanForInformationAction {
     
     UIImageView *imageV = (UIImageView *)self.informationCollectionView.chooseImageView.imageViews.firstObject;
-    
-    [self performSelectorInBackground:@selector(didFinishedSelect:) withObject:imageV.image];
-    
     imageV.image=[WatermarkMaker watermarkImageForImage:imageV.image];
+    
+    if (self.cardType == 2 && _currentOpenMode == 1) {
+        //扫描+外国人
+        [Utils toastview:@"识别证件信息失败，请手动录入"];
+    } else {
+        self.processView = [[FailedView alloc] initWithFrame:CGRectMake(0, 0, screenWidth, screenHeight) andTitle:@"正在扫描" andDetail:@"请耐心等待..." andImageName:@"icon_smile" andTextColorHex:@"#eb000c"];
+        [[UIApplication sharedApplication].keyWindow addSubview:self.processView];
+                
+        [self performSelectorInBackground:@selector(didFinishedSelect:) withObject:imageV.image];
+        
+    }
     
 }
 
@@ -775,7 +786,6 @@ CBCentralManagerDelegate>{
         ///选择扫描识别时，用户拍摄/上传（和以前一样是根据开关控制的）身份证人像面时，直接提示用户“识别证件信息失败，请手动录入”。并且允许用户修改姓名、证件号【需要验证证件号第一位是9开头】【注意：只有这种情况允许修改证件号】
         if (self.cardType == 2) {
             //是外国人
-            [Utils toastview:@"识别证件信息失败，请手动录入"];
             InputView *numberIV = self.informationCollectionView.inputViews[1];
             numberIV.textField.userInteractionEnabled = YES;
             

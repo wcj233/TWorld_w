@@ -142,10 +142,11 @@ CBCentralManagerDelegate> {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(clearAllInfosAction:) name:@"ChooseImageViewRemoveImageAction" object:nil];
     
     [self configCallback];
+    
+    [self showChooseCardTypeAction];
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear: animated];
+- (void)showChooseCardTypeAction {
     
     ChooseIDTypeAlertV *v = [[ChooseIDTypeAlertV alloc] init];
     [[UIApplication sharedApplication].delegate.window addSubview:v];
@@ -253,8 +254,6 @@ CBCentralManagerDelegate> {
         
         if (self.cardType == 2) {
             //外国人
-            [Utils toastview:@"识别证件信息失败，请手动录入"];
-            
             self.fourView.isIDCardEnable = YES;
         }
     }
@@ -304,7 +303,6 @@ CBCentralManagerDelegate> {
         
         if (self.cardType == 2) {
             //外国人
-            [Utils toastview:@"识别证件信息失败，请手动录入"];
             self.fourView.isIDCardEnable = YES;
         }
     }
@@ -332,11 +330,19 @@ CBCentralManagerDelegate> {
 //删除扫描照片的时候清除扫描得到的信息
 - (void)clearAllInfosAction:(NSNotification *)noti{
     
-    if (self.cardType == 2 && self.scanType == 2) {
+    self.fourView.infoArray = [NSMutableArray array];
+    
+    if (self.cardType == 2) {
         //扫描下的外国人
-        self.fourView.infoArray = [NSMutableArray arrayWithArray:@[@"", @"", @"中华人民共和国国家移民管理局"]];
-    } else {
-        self.fourView.infoArray = [NSMutableArray array];
+        if (![self.typeString isEqualToString:@"写卡激活"]) {
+            if (self.scanType == 2) {
+                self.fourView.infoArray = [NSMutableArray arrayWithArray:@[@"", @"", @"中华人民共和国国家移民管理局"]];
+            }
+        } else {
+            if (self.scanType == 1) {
+                self.fourView.infoArray = [NSMutableArray arrayWithArray:@[@"", @"", @"中华人民共和国国家移民管理局"]];
+            }
+        }
     }
     [self.fourView.contentTableView reloadData];
 }
@@ -357,7 +363,7 @@ CBCentralManagerDelegate> {
     }
     
     if (self.cardType == 2) {
-        if (![self.fourView.infoArray[1] hasPrefix:@"9"]) {
+        if (!([self.fourView.infoArray[1] hasPrefix:@"9"] || [Utils JudgeString:self.fourView.infoArray[1]])) {
             [Utils toastview:@"请检查您输入的证件号是否正确"];
             
             return;
@@ -885,16 +891,32 @@ CBCentralManagerDelegate> {
 #elif TARGET_OS_IPHONE//真机
 
 //扫描操作，接收通知进入
-- (void)scanForInformationAction{
-    
-    self.processView = [[FailedView alloc] initWithFrame:CGRectMake(0, 0, screenWidth, screenHeight) andTitle:@"正在扫描" andDetail:@"请耐心等待..." andImageName:@"icon_smile" andTextColorHex:@"#eb000c"];
-    [[UIApplication sharedApplication].keyWindow addSubview:self.processView];
+- (void)scanForInformationAction {
     
     UIImageView *imageV = (UIImageView *)self.fourView.chooseImageView.imageViews.firstObject;
-    
-    [self performSelectorInBackground:@selector(didFinishedSelect:) withObject:imageV.image];
-    
     imageV.image=[WatermarkMaker watermarkImageForImage:imageV.image];
+    
+    if (self.cardType == 2) {
+        //扫描+外国人
+        
+        if (![self.typeString isEqualToString:@"写卡激活"]) {
+            if (self.scanType == 2) {
+                [Utils toastview:@"识别证件信息失败，请手动录入"];
+                
+                return;
+            }
+        } else {
+            if (self.scanType == 1) {
+                [Utils toastview:@"识别证件信息失败，请手动录入"];
+                
+                return;
+            }
+        }
+    }
+        self.processView = [[FailedView alloc] initWithFrame:CGRectMake(0, 0, screenWidth, screenHeight) andTitle:@"正在扫描" andDetail:@"请耐心等待..." andImageName:@"icon_smile" andTextColorHex:@"#eb000c"];
+        [[UIApplication sharedApplication].keyWindow addSubview:self.processView];
+                
+        [self performSelectorInBackground:@selector(didFinishedSelect:) withObject:imageV.image];
 }
 
 //存储照片

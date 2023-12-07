@@ -92,4 +92,7 @@
 //是否是纯数字
 +(int)checkIsHaveNumAndLetter:(NSString*)password;
 
+//是不是首字母开头
++(BOOL)JudgeString:(NSString *)string;
+
 @end

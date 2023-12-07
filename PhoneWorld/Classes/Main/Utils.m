@@ -556,5 +556,16 @@
     
 }
 
+//是不是首字母开头
++(BOOL)JudgeString:(NSString *)string {
+    if (string.length < 1) {
+        return NO;
+    }
+    NSString *firstStr = [string substringToIndex:1];
+    NSString *regex = @"[A-Za-z]+";
+    NSPredicate*predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
+    return [predicate evaluateWithObject:firstStr];
+}
+
 
 @end
