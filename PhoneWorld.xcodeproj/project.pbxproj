@@ -427,6 +427,8 @@
 		8AFC48D61DC9EF4D00E6C982 /* MessageDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AFC48D51DC9EF4D00E6C982 /* MessageDetailModel.m */; };
 		8AFF2A681EC54EB9004C1F96 /* NumberDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AFF2A671EC54EB9004C1F96 /* NumberDetailViewController.m */; };
 		8AFF2A6B1EC5582F004C1F96 /* PayWayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AFF2A6A1EC5582F004C1F96 /* PayWayView.m */; };
+		930471C72B332B14000215BB /* libReliableBurstData_arm64.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 930471C52B332B14000215BB /* libReliableBurstData_arm64.a */; };
+		930471C82B332B14000215BB /* SRIDCardReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 930471C62B332B14000215BB /* SRIDCardReader.framework */; };
 		9313732F2AF490BF002AD66C /* STIDCardReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9313732E2AF490BF002AD66C /* STIDCardReader.framework */; };
 		93271EF22B1F15BD00E76C96 /* AipOcrSdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93271EF12B1F15BC00E76C96 /* AipOcrSdk.framework */; };
 		93271EF42B1F188600E76C96 /* AipOcrSdk.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 93271EF12B1F15BC00E76C96 /* AipOcrSdk.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -434,8 +436,6 @@
 		93271EF82B1F18B100E76C96 /* IdcardQuality.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93271EF62B1F18B100E76C96 /* IdcardQuality.framework */; };
 		93271EF92B1F18BB00E76C96 /* IdcardQuality.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 93271EF62B1F18B100E76C96 /* IdcardQuality.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		93271EFA2B1F18C600E76C96 /* AipBase.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 93271EF52B1F18B100E76C96 /* AipBase.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		93271EFF2B1F7B4400E76C96 /* SRIDCardReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93271EFD2B1F7B4400E76C96 /* SRIDCardReader.framework */; };
-		93271F002B1F7B4400E76C96 /* libReliableBurstData_arm64.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 93271EFE2B1F7B4400E76C96 /* libReliableBurstData_arm64.a */; };
 		93271F032B200F1E00E76C96 /* ChooseIDTypeAlertV.m in Sources */ = {isa = PBXBuildFile; fileRef = 93271F022B200F1E00E76C96 /* ChooseIDTypeAlertV.m */; };
 		932C434726788F9000C0B976 /* RectManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 932C434526788F9000C0B976 /* RectManager.m */; };
 		932C434D267890B300C0B976 /* UIAlertController+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 932C434C267890B200C0B976 /* UIAlertController+Extend.m */; };
@@ -1278,12 +1278,12 @@
 		8AFF2A671EC54EB9004C1F96 /* NumberDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberDetailViewController.m; sourceTree = "<group>"; };
 		8AFF2A691EC5582F004C1F96 /* PayWayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayWayView.h; sourceTree = "<group>"; };
 		8AFF2A6A1EC5582F004C1F96 /* PayWayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayWayView.m; sourceTree = "<group>"; };
+		930471C52B332B14000215BB /* libReliableBurstData_arm64.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libReliableBurstData_arm64.a; sourceTree = "<group>"; };
+		930471C62B332B14000215BB /* SRIDCardReader.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SRIDCardReader.framework; sourceTree = "<group>"; };
 		9313732E2AF490BF002AD66C /* STIDCardReader.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = STIDCardReader.framework; sourceTree = "<group>"; };
 		93271EF12B1F15BC00E76C96 /* AipOcrSdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AipOcrSdk.framework; sourceTree = "<group>"; };
 		93271EF52B1F18B100E76C96 /* AipBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AipBase.framework; sourceTree = "<group>"; };
 		93271EF62B1F18B100E76C96 /* IdcardQuality.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IdcardQuality.framework; sourceTree = "<group>"; };
-		93271EFD2B1F7B4400E76C96 /* SRIDCardReader.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SRIDCardReader.framework; sourceTree = "<group>"; };
-		93271EFE2B1F7B4400E76C96 /* libReliableBurstData_arm64.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libReliableBurstData_arm64.a; sourceTree = "<group>"; };
 		93271F012B200F1E00E76C96 /* ChooseIDTypeAlertV.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChooseIDTypeAlertV.h; sourceTree = "<group>"; };
 		93271F022B200F1E00E76C96 /* ChooseIDTypeAlertV.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChooseIDTypeAlertV.m; sourceTree = "<group>"; };
 		932C434526788F9000C0B976 /* RectManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RectManager.m; sourceTree = "<group>"; };
@@ -1385,14 +1385,14 @@
 				8A8C10B01DD41045004B7E39 /* libWeChatSDK.a in Frameworks */,
 				8A1203FC1DCB39A90011A9C3 /* CoreMotion.framework in Frameworks */,
 				8A1203FA1DCB39A00011A9C3 /* CFNetwork.framework in Frameworks */,
-				93271EFF2B1F7B4400E76C96 /* SRIDCardReader.framework in Frameworks */,
 				8A1203F81DCB399A0011A9C3 /* Foundation.framework in Frameworks */,
 				8A1203F61DCB39920011A9C3 /* UIKit.framework in Frameworks */,
+				930471C72B332B14000215BB /* libReliableBurstData_arm64.a in Frameworks */,
 				8A1203F21DCB39860011A9C3 /* CoreText.framework in Frameworks */,
 				93271EF72B1F18B100E76C96 /* AipBase.framework in Frameworks */,
 				8A1203F01DCB397E0011A9C3 /* QuartzCore.framework in Frameworks */,
 				8A52CD461DBF698C00D9DC91 /* CoreTelephony.framework in Frameworks */,
-				93271F002B1F7B4400E76C96 /* libReliableBurstData_arm64.a in Frameworks */,
+				930471C82B332B14000215BB /* SRIDCardReader.framework in Frameworks */,
 				8A05FD741DF8F37800A01F3A /* AddressPick.framework in Frameworks */,
 				8A1203EA1DCB39570011A9C3 /* libc++.tbd in Frameworks */,
 				93271EF82B1F18B100E76C96 /* IdcardQuality.framework in Frameworks */,
@@ -1871,8 +1871,8 @@
 		8A49D8601DACCB4600A1D650 = {
 			isa = PBXGroup;
 			children = (
-				93271EFE2B1F7B4400E76C96 /* libReliableBurstData_arm64.a */,
-				93271EFD2B1F7B4400E76C96 /* SRIDCardReader.framework */,
+				930471C52B332B14000215BB /* libReliableBurstData_arm64.a */,
+				930471C62B332B14000215BB /* SRIDCardReader.framework */,
 				9313732E2AF490BF002AD66C /* STIDCardReader.framework */,
 				8AD96E271DACCC640080CC8C /* Podfile */,
 				8A49D86B1DACCB4600A1D650 /* PhoneWorld */,
@@ -3990,7 +3990,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4.7.2.202012120940;
+				CURRENT_PROJECT_VERSION = 4.7.3.202012120940;
 				DEVELOPMENT_TEAM = 4F6WNCMY6G;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -3999,6 +3999,7 @@
 					"$(PROJECT_DIR)/PhoneWorld",
 					"$(PROJECT_DIR)/PhoneWorld/Classes",
 				);
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/PhoneWorld/PrefixHeader.pch";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -4015,7 +4016,7 @@
 					"$(SRCROOT)/PhoneWorld",
 				);
 				INFOPLIST_FILE = PhoneWorld/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -4026,14 +4027,14 @@
 					"$(PROJECT_DIR)/PhoneWorld/Tools/UMessage_Sdk_1.5.0a",
 					"$(PROJECT_DIR)",
 				);
-				MARKETING_VERSION = 4.9.4;
+				MARKETING_VERSION = 4.9.5;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.TWorld.hjsj;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALID_ARCHS = "armv7 armv7s arm64 x86_64 i386";
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Debug;
 		};
@@ -4044,7 +4045,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4.7.2.202012120940;
+				CURRENT_PROJECT_VERSION = 4.7.3.202012120940;
 				DEVELOPMENT_TEAM = 4F6WNCMY6G;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -4053,6 +4054,7 @@
 					"$(PROJECT_DIR)/PhoneWorld",
 					"$(PROJECT_DIR)/PhoneWorld/Classes",
 				);
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/PhoneWorld/PrefixHeader.pch";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -4069,7 +4071,7 @@
 					"$(SRCROOT)/PhoneWorld",
 				);
 				INFOPLIST_FILE = PhoneWorld/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -4080,14 +4082,14 @@
 					"$(PROJECT_DIR)/PhoneWorld/Tools/UMessage_Sdk_1.5.0a",
 					"$(PROJECT_DIR)",
 				);
-				MARKETING_VERSION = 4.9.4;
+				MARKETING_VERSION = 4.9.5;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.TWorld.hjsj;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALID_ARCHS = "armv7 armv7s arm64 x86_64 i386";
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Release;
 		};

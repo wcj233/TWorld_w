@@ -191,8 +191,6 @@ CBCentralManagerDelegate> {
             UIImage *orignalImage = [UIImage imageNamed:@"font2"];
             orignalImage = [orignalImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
             self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:orignalImage style:UIBarButtonItemStylePlain target:self action:nil];
-            //扫描
-            [self performSelectorInBackground:@selector(initRecog) withObject:nil];
         }
         
         if (self.cardOpenMode==3) {//全部的话
@@ -255,6 +253,8 @@ CBCentralManagerDelegate> {
         if (self.cardType == 2) {
             //外国人
             self.fourView.isIDCardEnable = YES;
+            
+            [self clearAllInfosAction:nil];
         }
     }
     if (_cardOpenMode==3) {//全部
@@ -700,7 +700,6 @@ CBCentralManagerDelegate> {
 - (void)openWayAction:(NSString *)openWay{
     
     if ([self.openWay isEqualToString:@"扫描开户"]) {
-        [self performSelectorInBackground:@selector(initRecog) withObject:nil];
         self.fourView.whitePrepareOpenFourViewDelegate = self;
         //        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(scanForInformationAction) name:@"scanForInformation" object:nil];
     }else{

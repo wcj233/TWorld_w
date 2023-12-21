@@ -252,8 +252,8 @@
             filePath = "PhoneWorld/Classes/WhitePrepareOpen/ViewController/WhitePrepareOpenFourViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1038"
-            endingLineNumber = "1038"
+            startingLineNumber = "1037"
+            endingLineNumber = "1037"
             landmarkName = "-imagePickerController:didFinishPickingMediaWithInfo:"
             landmarkType = "7">
          </BreakpointContent>
@@ -341,22 +341,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "58DED394-0793-4B08-B174-3397EE84AC09"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PhoneWorld/Classes/WhitePrepareOpen/ViewController/WhitePrepareOpenFourViewController.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "704"
-            endingLineNumber = "704"
-            landmarkName = "-openWayAction:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "4ED031F3-50DC-47B3-9097-755B989C2F59"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -364,8 +348,8 @@
             filePath = "PhoneWorld/Classes/WhitePrepareOpen/ViewController/WhitePrepareOpenFourViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "707"
-            endingLineNumber = "707"
+            startingLineNumber = "706"
+            endingLineNumber = "706"
             landmarkName = "-openWayAction:"
             landmarkType = "7">
          </BreakpointContent>
@@ -508,28 +492,13 @@
             filePath = "PhoneWorld/Classes/WhitePrepareOpen/ViewController/WhitePrepareOpenFourViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1390"
-            endingLineNumber = "1390"
+            startingLineNumber = "1389"
+            endingLineNumber = "1389"
             landmarkName = "-goFaceRecognitionForSendDictionary:"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "3099CD08-B9F8-4C8E-B594-22E126DF3209 - c2467346a54ab21"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[WhitePrepareOpenFourViewController goFaceRecognitionForSendDictionary:]"
-                  moduleName = "PhoneWorld"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sheshe/Desktop/TWorld/PhoneWorld/Classes/WhitePrepareOpen/ViewController/WhitePrepareOpenFourViewController.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1391"
-                  endingLineNumber = "1391"
-                  offsetFromSymbolStart = "976">
-               </Location>
-               <Location
-                  uuid = "3099CD08-B9F8-4C8E-B594-22E126DF3209 - 5902cf896f39874c"
+                  uuid = "3099CD08-B9F8-4C8E-B594-22E126DF3209 - 5902cf896f3986f0"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -539,12 +508,12 @@
                   urlString = "file:///Users/sheshe/Desktop/TWorld/PhoneWorld/Classes/WhitePrepareOpen/ViewController/WhitePrepareOpenFourViewController.m"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1392"
-                  endingLineNumber = "1392"
-                  offsetFromSymbolStart = "68">
+                  startingLineNumber = "1388"
+                  endingLineNumber = "1388"
+                  offsetFromSymbolStart = "88">
                </Location>
                <Location
-                  uuid = "3099CD08-B9F8-4C8E-B594-22E126DF3209 - 5902cf896f3986b2"
+                  uuid = "3099CD08-B9F8-4C8E-B594-22E126DF3209 - 5902cf896f3986d1"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -554,8 +523,8 @@
                   urlString = "file:///Users/sheshe/Desktop/TWorld/PhoneWorld/Classes/WhitePrepareOpen/ViewController/WhitePrepareOpenFourViewController.m"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1390"
-                  endingLineNumber = "1390"
+                  startingLineNumber = "1389"
+                  endingLineNumber = "1389"
                   offsetFromSymbolStart = "68">
                </Location>
             </Locations>
@@ -715,8 +684,8 @@
             filePath = "PhoneWorld/Classes/WhitePrepareOpen/ViewController/WhitePrepareOpenFourViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "818"
-            endingLineNumber = "818"
+            startingLineNumber = "817"
+            endingLineNumber = "817"
             landmarkName = "-successBack:withData:"
             landmarkType = "7">
          </BreakpointContent>
@@ -731,8 +700,8 @@
             filePath = "PhoneWorld/Classes/WhitePrepareOpen/ViewController/WhitePrepareOpenFourViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "817"
-            endingLineNumber = "817"
+            startingLineNumber = "816"
+            endingLineNumber = "816"
             landmarkName = "-successBack:withData:"
             landmarkType = "7">
          </BreakpointContent>
@@ -907,8 +876,8 @@
             filePath = "PhoneWorld/Classes/WhitePrepareOpen/ViewController/WhitePrepareOpenFourViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "953"
-            endingLineNumber = "953"
+            startingLineNumber = "952"
+            endingLineNumber = "952"
             landmarkName = "-configCallback"
             landmarkType = "7">
          </BreakpointContent>
@@ -1003,8 +972,8 @@
             filePath = "PhoneWorld/Classes/WhitePrepareOpen/ViewController/WhitePrepareOpenFourViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "225"
-            endingLineNumber = "225"
+            startingLineNumber = "223"
+            endingLineNumber = "223"
             landmarkName = "-changeTipStyle"
             landmarkType = "7">
             <Locations>
@@ -1045,14 +1014,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "7B74C6EB-E668-428C-BC58-3658312EE805"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PhoneWorld/Classes/WhitePrepareOpen/ViewController/WhitePrepareOpenFourViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "213"
-            endingLineNumber = "213"
+            startingLineNumber = "211"
+            endingLineNumber = "211"
             landmarkName = "-changeModel:"
             landmarkType = "7">
             <Locations>
@@ -1069,10 +1038,10 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "213"
                   endingLineNumber = "213"
-                  offsetFromSymbolStart = "72">
+                  offsetFromSymbolStart = "44">
                </Location>
                <Location
-                  uuid = "7B74C6EB-E668-428C-BC58-3658312EE805 - 5bf05e3cbf8722ac"
+                  uuid = "7B74C6EB-E668-428C-BC58-3658312EE805 - 5bf05e3cbf87236a"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1082,8 +1051,8 @@
                   urlString = "file:///Users/sheshe/Desktop/TWorld/PhoneWorld/Classes/WhitePrepareOpen/ViewController/WhitePrepareOpenFourViewController.m"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "213"
-                  endingLineNumber = "213"
+                  startingLineNumber = "211"
+                  endingLineNumber = "211"
                   offsetFromSymbolStart = "44">
                </Location>
             </Locations>
@@ -1147,8 +1116,8 @@
             filePath = "PhoneWorld/Classes/WhitePrepareOpen/ViewController/WhitePrepareOpenFourViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "858"
-            endingLineNumber = "858"
+            startingLineNumber = "857"
+            endingLineNumber = "857"
             landmarkName = "-successBack:withData:"
             landmarkType = "7">
          </BreakpointContent>
@@ -1163,8 +1132,8 @@
             filePath = "PhoneWorld/Classes/WhitePrepareOpen/ViewController/WhitePrepareOpenFourViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1002"
-            endingLineNumber = "1002"
+            startingLineNumber = "1001"
+            endingLineNumber = "1001"
             landmarkName = "-configCallback"
             landmarkType = "7">
             <Locations>
@@ -1211,13 +1180,13 @@
             filePath = "PhoneWorld/Classes/WhitePrepareOpen/ViewController/WhitePrepareOpenFourViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1317"
-            endingLineNumber = "1317"
+            startingLineNumber = "1316"
+            endingLineNumber = "1316"
             landmarkName = "-SRsuccessBack:withData:"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "52EFAC83-FAD9-4C0D-B405-E0BB60598F09 - a4946ec79587013a"
+                  uuid = "52EFAC83-FAD9-4C0D-B405-E0BB60598F09 - a4946ec79587011b"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1227,12 +1196,12 @@
                   urlString = "file:///Users/sheshe/Desktop/TWorld/PhoneWorld/Classes/WhitePrepareOpen/ViewController/WhitePrepareOpenFourViewController.m"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1317"
-                  endingLineNumber = "1317"
-                  offsetFromSymbolStart = "380">
+                  startingLineNumber = "1316"
+                  endingLineNumber = "1316"
+                  offsetFromSymbolStart = "940">
                </Location>
                <Location
-                  uuid = "52EFAC83-FAD9-4C0D-B405-E0BB60598F09 - a4946ec79587013a"
+                  uuid = "52EFAC83-FAD9-4C0D-B405-E0BB60598F09 - a4946ec79587011b"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1242,8 +1211,8 @@
                   urlString = "file:///Users/sheshe/Desktop/TWorld/PhoneWorld/Classes/WhitePrepareOpen/ViewController/WhitePrepareOpenFourViewController.m"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1317"
-                  endingLineNumber = "1317"
+                  startingLineNumber = "1316"
+                  endingLineNumber = "1316"
                   offsetFromSymbolStart = "708">
                </Location>
             </Locations>
@@ -1259,13 +1228,13 @@
             filePath = "PhoneWorld/Classes/WhitePrepareOpen/ViewController/WhitePrepareOpenFourViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1324"
-            endingLineNumber = "1324"
+            startingLineNumber = "1323"
+            endingLineNumber = "1323"
             landmarkName = "-SRsuccessBack:withData:"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "39C8330D-37BB-4E36-AA5F-56AA157B1657 - a4946ec79586fe13"
+                  uuid = "39C8330D-37BB-4E36-AA5F-56AA157B1657 - a4946ec79586fe74"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1275,12 +1244,12 @@
                   urlString = "file:///Users/sheshe/Desktop/TWorld/PhoneWorld/Classes/WhitePrepareOpen/ViewController/WhitePrepareOpenFourViewController.m"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1324"
-                  endingLineNumber = "1324"
-                  offsetFromSymbolStart = "1240">
+                  startingLineNumber = "1323"
+                  endingLineNumber = "1323"
+                  offsetFromSymbolStart = "1800">
                </Location>
                <Location
-                  uuid = "39C8330D-37BB-4E36-AA5F-56AA157B1657 - a4946ec79586fe13"
+                  uuid = "39C8330D-37BB-4E36-AA5F-56AA157B1657 - a4946ec79586fe74"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1290,8 +1259,8 @@
                   urlString = "file:///Users/sheshe/Desktop/TWorld/PhoneWorld/Classes/WhitePrepareOpen/ViewController/WhitePrepareOpenFourViewController.m"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1324"
-                  endingLineNumber = "1324"
+                  startingLineNumber = "1323"
+                  endingLineNumber = "1323"
                   offsetFromSymbolStart = "1568">
                </Location>
             </Locations>
@@ -1307,8 +1276,8 @@
             filePath = "PhoneWorld/Classes/WhitePrepareOpen/ViewController/WhitePrepareOpenFourViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "238"
-            endingLineNumber = "238"
+            startingLineNumber = "236"
+            endingLineNumber = "236"
             landmarkName = "-changeTipStyle"
             landmarkType = "7">
             <Locations>
@@ -1375,38 +1344,6 @@
             endingLineNumber = "335"
             landmarkName = "-clearAllInfosAction:"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "D2636BB7-C622-4AD9-A8AE-DB8E74AE2E20 - de9f1cb56e2be60"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[WhitePrepareOpenFourViewController clearAllInfosAction:]"
-                  moduleName = "PhoneWorld"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sheshe/Desktop/TWorld/PhoneWorld/Classes/WhitePrepareOpen/ViewController/WhitePrepareOpenFourViewController.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "335"
-                  endingLineNumber = "335"
-                  offsetFromSymbolStart = "120">
-               </Location>
-               <Location
-                  uuid = "D2636BB7-C622-4AD9-A8AE-DB8E74AE2E20 - de9f1cb56e2be60"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[WhitePrepareOpenFourViewController clearAllInfosAction:]"
-                  moduleName = "PhoneWorld"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sheshe/Desktop/TWorld/PhoneWorld/Classes/WhitePrepareOpen/ViewController/WhitePrepareOpenFourViewController.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "335"
-                  endingLineNumber = "335"
-                  offsetFromSymbolStart = "140">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1771,8 +1708,8 @@
             filePath = "PhoneWorld/Classes/WhitePrepareOpen/ViewController/WhitePrepareOpenFourViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "925"
-            endingLineNumber = "925"
+            startingLineNumber = "924"
+            endingLineNumber = "924"
             landmarkName = "-didFinishedSelect:"
             landmarkType = "7">
             <Locations>
@@ -1835,8 +1772,8 @@
             filePath = "PhoneWorld/Classes/WhitePrepareOpen/ViewController/WhitePrepareOpenFourViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "899"
-            endingLineNumber = "899"
+            startingLineNumber = "898"
+            endingLineNumber = "898"
             landmarkName = "-scanForInformationAction"
             landmarkType = "7">
          </BreakpointContent>
@@ -2062,6 +1999,38 @@
             startingLineNumber = "567"
             endingLineNumber = "567"
             landmarkName = "+JudgeString:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DD3005F9-A005-403E-80F6-A9260BED16F3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PhoneWorld/Classes/WhitePrepareOpen/ViewController/WhitePrepareOpenFourViewController.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "239"
+            endingLineNumber = "239"
+            landmarkName = "-changeTipStyle"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5E91628C-6047-4208-80CF-02C0013DFFC5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PhoneWorld/Classes/WhitePrepareOpen/ViewController/WhitePrepareOpenFourViewController.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "253"
+            endingLineNumber = "253"
+            landmarkName = "-changeTipStyle"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
