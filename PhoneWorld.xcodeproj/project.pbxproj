@@ -427,8 +427,9 @@
 		8AFC48D61DC9EF4D00E6C982 /* MessageDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AFC48D51DC9EF4D00E6C982 /* MessageDetailModel.m */; };
 		8AFF2A681EC54EB9004C1F96 /* NumberDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AFF2A671EC54EB9004C1F96 /* NumberDetailViewController.m */; };
 		8AFF2A6B1EC5582F004C1F96 /* PayWayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AFF2A6A1EC5582F004C1F96 /* PayWayView.m */; };
-		930471C72B332B14000215BB /* libReliableBurstData_arm64.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 930471C52B332B14000215BB /* libReliableBurstData_arm64.a */; };
-		930471C82B332B14000215BB /* SRIDCardReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 930471C62B332B14000215BB /* SRIDCardReader.framework */; };
+		9304734E2B33D2B0000215BB /* libUnPack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9304734B2B33D2AF000215BB /* libUnPack.a */; };
+		9304734F2B33D2B0000215BB /* libReliableBurstData_arm64.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9304734C2B33D2B0000215BB /* libReliableBurstData_arm64.a */; };
+		930473502B33D2B0000215BB /* SRIDCardReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9304734D2B33D2B0000215BB /* SRIDCardReader.framework */; };
 		9313732F2AF490BF002AD66C /* STIDCardReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9313732E2AF490BF002AD66C /* STIDCardReader.framework */; };
 		93271EF22B1F15BD00E76C96 /* AipOcrSdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93271EF12B1F15BC00E76C96 /* AipOcrSdk.framework */; };
 		93271EF42B1F188600E76C96 /* AipOcrSdk.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 93271EF12B1F15BC00E76C96 /* AipOcrSdk.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -1278,8 +1279,9 @@
 		8AFF2A671EC54EB9004C1F96 /* NumberDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberDetailViewController.m; sourceTree = "<group>"; };
 		8AFF2A691EC5582F004C1F96 /* PayWayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayWayView.h; sourceTree = "<group>"; };
 		8AFF2A6A1EC5582F004C1F96 /* PayWayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayWayView.m; sourceTree = "<group>"; };
-		930471C52B332B14000215BB /* libReliableBurstData_arm64.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libReliableBurstData_arm64.a; sourceTree = "<group>"; };
-		930471C62B332B14000215BB /* SRIDCardReader.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SRIDCardReader.framework; sourceTree = "<group>"; };
+		9304734B2B33D2AF000215BB /* libUnPack.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUnPack.a; sourceTree = "<group>"; };
+		9304734C2B33D2B0000215BB /* libReliableBurstData_arm64.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libReliableBurstData_arm64.a; sourceTree = "<group>"; };
+		9304734D2B33D2B0000215BB /* SRIDCardReader.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SRIDCardReader.framework; sourceTree = "<group>"; };
 		9313732E2AF490BF002AD66C /* STIDCardReader.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = STIDCardReader.framework; sourceTree = "<group>"; };
 		93271EF12B1F15BC00E76C96 /* AipOcrSdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AipOcrSdk.framework; sourceTree = "<group>"; };
 		93271EF52B1F18B100E76C96 /* AipBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AipBase.framework; sourceTree = "<group>"; };
@@ -1381,18 +1383,19 @@
 				8A8C10B11DD4106A004B7E39 /* Security.framework in Frameworks */,
 				8AADA1CA1DD2D39E000A5C42 /* AlipaySDK.framework in Frameworks */,
 				93271EF22B1F15BD00E76C96 /* AipOcrSdk.framework in Frameworks */,
+				930473502B33D2B0000215BB /* SRIDCardReader.framework in Frameworks */,
 				8AADA1C81DD2C12D000A5C42 /* libsqlite3.tbd in Frameworks */,
 				8A8C10B01DD41045004B7E39 /* libWeChatSDK.a in Frameworks */,
 				8A1203FC1DCB39A90011A9C3 /* CoreMotion.framework in Frameworks */,
 				8A1203FA1DCB39A00011A9C3 /* CFNetwork.framework in Frameworks */,
+				9304734E2B33D2B0000215BB /* libUnPack.a in Frameworks */,
 				8A1203F81DCB399A0011A9C3 /* Foundation.framework in Frameworks */,
 				8A1203F61DCB39920011A9C3 /* UIKit.framework in Frameworks */,
-				930471C72B332B14000215BB /* libReliableBurstData_arm64.a in Frameworks */,
 				8A1203F21DCB39860011A9C3 /* CoreText.framework in Frameworks */,
 				93271EF72B1F18B100E76C96 /* AipBase.framework in Frameworks */,
 				8A1203F01DCB397E0011A9C3 /* QuartzCore.framework in Frameworks */,
 				8A52CD461DBF698C00D9DC91 /* CoreTelephony.framework in Frameworks */,
-				930471C82B332B14000215BB /* SRIDCardReader.framework in Frameworks */,
+				9304734F2B33D2B0000215BB /* libReliableBurstData_arm64.a in Frameworks */,
 				8A05FD741DF8F37800A01F3A /* AddressPick.framework in Frameworks */,
 				8A1203EA1DCB39570011A9C3 /* libc++.tbd in Frameworks */,
 				93271EF82B1F18B100E76C96 /* IdcardQuality.framework in Frameworks */,
@@ -1871,9 +1874,10 @@
 		8A49D8601DACCB4600A1D650 = {
 			isa = PBXGroup;
 			children = (
-				930471C52B332B14000215BB /* libReliableBurstData_arm64.a */,
-				930471C62B332B14000215BB /* SRIDCardReader.framework */,
 				9313732E2AF490BF002AD66C /* STIDCardReader.framework */,
+				9304734C2B33D2B0000215BB /* libReliableBurstData_arm64.a */,
+				9304734B2B33D2AF000215BB /* libUnPack.a */,
+				9304734D2B33D2B0000215BB /* SRIDCardReader.framework */,
 				8AD96E271DACCC640080CC8C /* Podfile */,
 				8A49D86B1DACCB4600A1D650 /* PhoneWorld */,
 				8A49D86A1DACCB4600A1D650 /* Products */,
@@ -4029,6 +4033,73 @@
 				);
 				MARKETING_VERSION = 4.9.5;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-w",
+					"-l\"FMDB\"",
+					"-l\"IQKeyboardManager\"",
+					"-l\"JSONModel\"",
+					"-l\"MBProgressHUD\"",
+					"-l\"MJRefresh\"",
+					"-l\"Masonry\"",
+					"-l\"PNChart\"",
+					"-l\"ReactiveCocoa\"",
+					"-l\"SDCycleScrollView\"",
+					"-l\"SDWebImage\"",
+					"-l\"UIActivityIndicator-for-SDWebImage\"",
+					"-l\"UICountingLabel\"",
+					"-l\"VTMagic\"",
+					"-l\"YBPopupMenu\"",
+					"-l\"YYModel\"",
+					"-l\"c++\"",
+					"-l\"crypto\"",
+					"-l\"sqlite3\"",
+					"-l\"sqlite3.0\"",
+					"-l\"ssl\"",
+					"-l\"z\"",
+					"-framework",
+					"\"Accelerate\"",
+					"-framework",
+					"\"AdSupport\"",
+					"-framework",
+					"\"BMKLocationKit\"",
+					"-framework",
+					"\"BaiduMapAPI_Base\"",
+					"-framework",
+					"\"BaiduMapAPI_Cloud\"",
+					"-framework",
+					"\"BaiduMapAPI_Map\"",
+					"-framework",
+					"\"BaiduMapAPI_Search\"",
+					"-framework",
+					"\"BaiduMapAPI_Utils\"",
+					"-framework",
+					"\"CoreFoundation\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"OpenGLES\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+					"-ld64",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.TWorld.hjsj;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -4084,6 +4155,73 @@
 				);
 				MARKETING_VERSION = 4.9.5;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-w",
+					"-l\"FMDB\"",
+					"-l\"IQKeyboardManager\"",
+					"-l\"JSONModel\"",
+					"-l\"MBProgressHUD\"",
+					"-l\"MJRefresh\"",
+					"-l\"Masonry\"",
+					"-l\"PNChart\"",
+					"-l\"ReactiveCocoa\"",
+					"-l\"SDCycleScrollView\"",
+					"-l\"SDWebImage\"",
+					"-l\"UIActivityIndicator-for-SDWebImage\"",
+					"-l\"UICountingLabel\"",
+					"-l\"VTMagic\"",
+					"-l\"YBPopupMenu\"",
+					"-l\"YYModel\"",
+					"-l\"c++\"",
+					"-l\"crypto\"",
+					"-l\"sqlite3\"",
+					"-l\"sqlite3.0\"",
+					"-l\"ssl\"",
+					"-l\"z\"",
+					"-framework",
+					"\"Accelerate\"",
+					"-framework",
+					"\"AdSupport\"",
+					"-framework",
+					"\"BMKLocationKit\"",
+					"-framework",
+					"\"BaiduMapAPI_Base\"",
+					"-framework",
+					"\"BaiduMapAPI_Cloud\"",
+					"-framework",
+					"\"BaiduMapAPI_Map\"",
+					"-framework",
+					"\"BaiduMapAPI_Search\"",
+					"-framework",
+					"\"BaiduMapAPI_Utils\"",
+					"-framework",
+					"\"CoreFoundation\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"OpenGLES\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+					"-ld64",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.TWorld.hjsj;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

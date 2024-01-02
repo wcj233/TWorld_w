@@ -20,8 +20,8 @@
 #import "ChooseWayViewController.h"
 //3代
 #import "SRIDCardReader/SRIDCardReader.h"
-#import "SRIDCardReader/sm4.h"
-#import "SRIDCardReader/ByteUtil.h"
+#import "SRIDCardReader/srSm4.h"
+#import "SRIDCardReader/SRByteUtil.h"
 #import "SRIDCardReader/HexUtil.h"
 #import <dlfcn.h>
 #import "ZSYPopoverListView.h"
@@ -1018,8 +1018,14 @@ BleProtocol
 #pragma mark -============= 3代蓝牙 事件 ================
 - (void)SRInit{
 //    [idManager setUpAccount:@"test03" password:@"12315aA..1"];
-    idManager = [SRIDCardReader instanceWithManagerAccount:@"test03" password:@"12315aA..1" key:@""];
+    idManager = [SRIDCardReader initDevice];
     idManager.delegate=self;
+    
+    //传入鉴权信息
+    [idManager setAppKey:SR_APP_KEY];
+    [idManager setAppSecret:SR_APP_SECRET];
+    [idManager setPassword:SR_APP_PASSWORD];
+    
     [idManager setServerIP:@"59.41.39.51" andPort:6000];
 //    manager = [[CBCentralManager alloc]initWithDelegate:self queue:nil];
     manager = [[CBCentralManager alloc]initWithDelegate:self queue:dispatch_get_global_queue(QOS_CLASS_UTILITY, 0)];

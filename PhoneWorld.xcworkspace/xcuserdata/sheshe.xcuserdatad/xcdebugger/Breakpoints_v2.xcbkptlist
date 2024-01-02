@@ -109,8 +109,8 @@
             filePath = "PhoneWorld/Classes/WhitePrepareOpen/ViewController/AgentWriteAndChooseViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1220"
-            endingLineNumber = "1220"
+            startingLineNumber = "1226"
+            endingLineNumber = "1226"
             landmarkName = "-jumpWayToOpenAnAccount"
             landmarkType = "7">
             <Locations>
@@ -157,6 +157,21 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "1220"
                   endingLineNumber = "1220"
+                  offsetFromSymbolStart = "240">
+               </Location>
+               <Location
+                  uuid = "E80962EA-0854-4468-96B0-A9B69406333E - 2c253ac300327d1f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[AgentWriteAndChooseViewController jumpWayToOpenAnAccount]"
+                  moduleName = "PhoneWorld"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sheshe/Desktop/TWorld/PhoneWorld/Classes/WhitePrepareOpen/ViewController/AgentWriteAndChooseViewController.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "1226"
+                  endingLineNumber = "1226"
                   offsetFromSymbolStart = "240">
                </Location>
             </Locations>
@@ -492,8 +507,8 @@
             filePath = "PhoneWorld/Classes/WhitePrepareOpen/ViewController/WhitePrepareOpenFourViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1389"
-            endingLineNumber = "1389"
+            startingLineNumber = "1395"
+            endingLineNumber = "1395"
             landmarkName = "-goFaceRecognitionForSendDictionary:"
             landmarkType = "7">
             <Locations>
@@ -525,6 +540,21 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "1389"
                   endingLineNumber = "1389"
+                  offsetFromSymbolStart = "68">
+               </Location>
+               <Location
+                  uuid = "3099CD08-B9F8-4C8E-B594-22E126DF3209 - 5902cf896f3987ef"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__73-[WhitePrepareOpenFourViewController goFaceRecognitionForSendDictionary:]_block_invoke"
+                  moduleName = "PhoneWorld"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sheshe/Desktop/TWorld/PhoneWorld/Classes/WhitePrepareOpen/ViewController/WhitePrepareOpenFourViewController.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "1395"
+                  endingLineNumber = "1395"
                   offsetFromSymbolStart = "68">
                </Location>
             </Locations>
@@ -742,14 +772,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "65560D98-B862-4D26-B3D9-6EA65E1117B5"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PhoneWorld/Classes/CardManagement/Controller/InformationCollectionViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1068"
-            endingLineNumber = "1068"
+            startingLineNumber = "1074"
+            endingLineNumber = "1074"
             landmarkName = "-SRsuccessBack:withData:"
             landmarkType = "7">
             <Locations>
@@ -781,6 +811,21 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "1069"
                   endingLineNumber = "1069"
+                  offsetFromSymbolStart = "36">
+               </Location>
+               <Location
+                  uuid = "65560D98-B862-4D26-B3D9-6EA65E1117B5 - 6c3f83d444e7fe5e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__62-[InformationCollectionViewController SRsuccessBack:withData:]_block_invoke"
+                  moduleName = "PhoneWorld"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sheshe/Desktop/TWorld/PhoneWorld/Classes/CardManagement/Controller/InformationCollectionViewController.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "1075"
+                  endingLineNumber = "1075"
                   offsetFromSymbolStart = "36">
                </Location>
             </Locations>
@@ -1180,8 +1225,8 @@
             filePath = "PhoneWorld/Classes/WhitePrepareOpen/ViewController/WhitePrepareOpenFourViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1316"
-            endingLineNumber = "1316"
+            startingLineNumber = "1322"
+            endingLineNumber = "1322"
             landmarkName = "-SRsuccessBack:withData:"
             landmarkType = "7">
             <Locations>
@@ -1215,6 +1260,21 @@
                   endingLineNumber = "1316"
                   offsetFromSymbolStart = "708">
                </Location>
+               <Location
+                  uuid = "52EFAC83-FAD9-4C0D-B405-E0BB60598F09 - a4946ec79586fe55"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__61-[WhitePrepareOpenFourViewController SRsuccessBack:withData:]_block_invoke"
+                  moduleName = "PhoneWorld"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sheshe/Desktop/TWorld/PhoneWorld/Classes/WhitePrepareOpen/ViewController/WhitePrepareOpenFourViewController.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "1322"
+                  endingLineNumber = "1322"
+                  offsetFromSymbolStart = "708">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -1228,8 +1288,8 @@
             filePath = "PhoneWorld/Classes/WhitePrepareOpen/ViewController/WhitePrepareOpenFourViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1323"
-            endingLineNumber = "1323"
+            startingLineNumber = "1329"
+            endingLineNumber = "1329"
             landmarkName = "-SRsuccessBack:withData:"
             landmarkType = "7">
             <Locations>
@@ -1261,6 +1321,21 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "1323"
                   endingLineNumber = "1323"
+                  offsetFromSymbolStart = "1568">
+               </Location>
+               <Location
+                  uuid = "39C8330D-37BB-4E36-AA5F-56AA157B1657 - a4946ec79586ff4e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__61-[WhitePrepareOpenFourViewController SRsuccessBack:withData:]_block_invoke"
+                  moduleName = "PhoneWorld"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sheshe/Desktop/TWorld/PhoneWorld/Classes/WhitePrepareOpen/ViewController/WhitePrepareOpenFourViewController.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "1329"
+                  endingLineNumber = "1329"
                   offsetFromSymbolStart = "1568">
                </Location>
             </Locations>
@@ -1894,7 +1969,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "38455437-97B6-4A68-925A-22E381709C7B"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PhoneWorld/Classes/CardManagement/Controller/InformationCollectionViewController.m"
@@ -2031,6 +2106,22 @@
             startingLineNumber = "253"
             endingLineNumber = "253"
             landmarkName = "-changeTipStyle"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D9F55DEF-364B-4F61-92FC-83E3B22CDD7D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PhoneWorld/Classes/CardManagement/Controller/InformationCollectionViewController.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "851"
+            endingLineNumber = "851"
+            landmarkName = "-SRConnectedDevicesForPeripheral:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

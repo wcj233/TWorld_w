@@ -8,7 +8,16 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreBluetooth/CoreBluetooth.h>
-//#import "BTReaderDriver.h"
+#import <SRIDCardReader/BTReaderDriver.h>
+#import <SRIDCardReader/srSm4.h>
+#import <SRIDCardReader/SRByteUtil.h>
+#import <SRIDCardReader/HexUtil.h>
+#import <SRIDCardReader/MPosCardReader.h>
+#import <SRIDCardReader/DataPackage.h>
+
+#define VERSION @"4.05.10_00_release"
+
+#define IS_DECRYPT_WLT 1
 
 FOUNDATION_EXPORT double SRIDCardReaderVersionNumber;
 
@@ -48,13 +57,23 @@ FOUNDATION_EXPORT const unsigned char SRIDCardReaderVersionString[];
 @interface SRIDCardReader : NSObject;
 @property (assign) id<SRIDCardReaderDelegate> delegate;
 
-//+ (id)instance;
++ (id)initDevice;
 
-+(id)instanceWithKey:(NSString *)key;
+- (void)setAppKey:(NSString *)appKey;
 
-+ (id)instanceWithManagerAccount:(NSString *)acc password:(NSString *) pwd key:(NSString *)key;
+- (void)setAppSecret:(NSString *)appSecret;
 
-+ (id)instanceWithManagerIP:(NSString *)ip port:(int)port account:(NSString *)acc password:(NSString *) pwd key:(NSString *)key;
+- (void)setPassword:(NSString *)password;
+
+- (void)setBusiSerial:(NSString *)busiSerial;
+
+- (void)setBusiData:(NSDictionary *)busiData;
+
+/*
+ 功能：是否允许使用本地授权文件AUTH_TOKEN
+ 参数：true-允许使用；false-不允许使用；
+ */
+- (void)allowedUseLocalAT:(BOOL)b;
 
 /*
  功能：实例方法，获取sdk版本号。
@@ -78,6 +97,14 @@ FOUNDATION_EXPORT const unsigned char SRIDCardReaderVersionString[];
  注：此接口谨慎使用，仅在写死服务器的情况下使用
  */
 - (void)setServerIp:(NSString*)serVerIp andPort:(int)port serVerSndIp:(NSString*)serVerSndIp andPortSnd:(int)Sndport;
+
+/*
+ 功能：设置认证服务地址
+ 参数：认证服务完整路径
+ 返回值：无
+ */
+-(void)setAuthServerUrl:(NSString *)url;
+
 /*
  功能：实例方法，设置用于身份证解码的蓝牙设备，必须在子线程调用
  参数：periperalHandle
@@ -87,6 +114,14 @@ FOUNDATION_EXPORT const unsigned char SRIDCardReaderVersionString[];
 
 //连接蓝牙设备对象
 - (BOOL)setLisentPeripheral:(CBPeripheral *)bt withCBManager:(CBCentralManager*)cbmanager;
+
+/*
+ 功能：与阅读器建立蓝牙连接
+ 参数：bt 蓝牙设备对象  cbmanager 当前蓝牙管理中心实例  timeout 连接超时，单位秒（不得小于2秒，否则可能导致连接失败）
+ 返回值：连接结果 0是连接成功 非0是连接失败
+ */
+- (int)connectPeripheral:(CBPeripheral *)bt withCBManager:(CBCentralManager *)cbmanager withTimeout:(int)timeout;
+
 
 /*
  功能：读取二代证
@@ -100,6 +135,13 @@ FOUNDATION_EXPORT const unsigned char SRIDCardReaderVersionString[];
  返回值：无
  */
 - (NSString *)startScaleCard:(int)timeOut;
+
+/**
+ 功能：读身份证
+ 参数：超时时间
+ 返回值：无
+ */
+-(void)readIDCardByJson:(int)timeout;
 
 /*
  功能:断开阅读器连接
@@ -132,7 +174,7 @@ FOUNDATION_EXPORT const unsigned char SRIDCardReaderVersionString[];
  参数:APDU字符串
  返回:十六进制字符串
  */
-- (NSString *)transmitAPDU:(NSString *)apduStr;
+- (NSString *)transmitAPDU:(NSString *)apduHexStr;
 
 /*
  功能:卡下电操作
@@ -174,6 +216,7 @@ FOUNDATION_EXPORT const unsigned char SRIDCardReaderVersionString[];
  1：成卡
  */
 - (int)readSimICCIDIMSI;
+
 /*
  功能：写入IMSI号
  参数：IMIS号
@@ -182,11 +225,18 @@ FOUNDATION_EXPORT const unsigned char SRIDCardReaderVersionString[];
 - (int)writeIMSI:(NSString *)imsi;
 
 /*
+ 功能：写入IMSI号
+ 参数：IMIS号 5G卡ri值
+ 返回值：写入结果代码
+ */
+- (int)writeIMSI:(NSString *)imsi ri:(NSString *)ri;
+
+/*
  功能：写入短信中心号和电话号码
  参数：短信中心号
  返回值：写入结果代码
  */
-- (int)writeMSGNumber:(NSString *)sms number:(Byte)num;
+- (int)writeMSGNumber:(NSString *)sms;
 
 /*
  功能：总部写卡函数，需要在非主线程中调用
@@ -194,6 +244,13 @@ FOUNDATION_EXPORT const unsigned char SRIDCardReaderVersionString[];
  返回值：写卡结果
  */
 - (NSString *)insertCard:(NSString *)option iccid:(NSString *)iccid imsi:(NSString *)imsi number:(NSString *)custNum;
+
+/*
+ 功能：总部写卡函数，需要在非主线程中调用
+ 参数：option：写入短信中心号，iccid：白卡卡号，imsi：写入的imsi号，number：写入的电话号码 ri:Routing Indicator
+ 返回值：写卡结果
+ */
+- (NSString *)insert5GCard:(NSString *)option iccid:(NSString *)iccid imsi:(NSString *)imsi number:(NSString *)custNum ri:(NSString *)ri;
 
 /*
  功能:写白卡
@@ -209,6 +266,23 @@ FOUNDATION_EXPORT const unsigned char SRIDCardReaderVersionString[];
  0:写卡成功
  */
 -(int)writeSimCard:(NSString *)imsi withNo:(NSString *)smsNo;
+
+/*
+ 功能:写白卡
+ 参数:
+ imsi:国际移动用户识别码,15位数字
+ smsNo:短信中心号码,11位数字号码
+ ri:Routing Indicator
+ 返回:
+ -1:打开阅读器失败
+ -2:写IMSI失败
+ -3:卡上电失败
+ -4:写SMS失败
+ 其他:卡返回失败
+ 0:写卡成功
+ */
+-(int)write5GSimCard:(NSString *)imsi withNo:(NSString *)smsNo ri:(NSString *)ri;
+
 /*
  功能：移动读卡系列号
  参数：无
@@ -264,6 +338,19 @@ FOUNDATION_EXPORT const unsigned char SRIDCardReaderVersionString[];
  1  写卡成功信息
  */
 - (int)writeMobileCardH_N:(NSString *)parm;
+
+/*
+ 功能：贵州移动写卡
+ 参数：写卡数据
+ 返回值：
+ -3 卡上电失败
+ -4 写卡指令错误
+ -5 写卡数据错误
+ -1 写卡失败
+ 1  写卡成功信息
+ */
+- (void)writeMobileCard_guizhou:(NSString *)parm;
+
 /*
  功能：读取短信中心号
  参数：无
@@ -318,6 +405,29 @@ FOUNDATION_EXPORT const unsigned char SRIDCardReaderVersionString[];
  */
 - (SRDeviceInfo *)getDeviceInfo;
 
+//- (void)setUrl:(NSString *)url;
+
+/*
+ 功能:获取设备型号
+ */
+- (NSString *)getReaderModel;
+
+/**
+ 功能：获取状态码
+ 返回值：true 连接中  false 未连接
+ */
+- (NSString *)getReaderStatus;
+
+/**
+ 功能：获取设备序列号
+ */
+- (NSString *)getDeviceName;
+
+/**
+ 功能：一体式读证
+ */
+- (void)readSAMCertInfo;
+
 @end
 @protocol SRIDCardReaderDelegate <NSObject>
 
@@ -337,6 +447,7 @@ error 描述失败的具体原因
  返回值：无
  */
 - (void)SRsuccessBack:(CBPeripheral *)peripheral withData:(id)data;
+
 /*
  功能：代理方法，读取身份证成功时可以通过这个代理方法同时返回信息和头像
  idCardName 姓名
@@ -358,12 +469,25 @@ error 描述失败的具体原因
  data 证件信息
  */
 - (void)SRsuccessIdCardInfoAndPhotoBack:(CBPeripheral*)peripheral withData:(id)data;
+
 /*
  功能：代理方法，返回身份证密文
  参数：身份证密文
  返回值：无
  */
 - (void)idResponSuccessBack:(NSData*)data;
+
+/*
+ 功能：返回读取结果的JSON字符串
+ 参数：JSON字符串
+ 返回值：无
+ */
+- (void)idCardInfoJsonStr:(NSString *)jsonStr;
+
+/**
+ 功能：代理方法 一体式读证返回结果
+ */
+- (void)readSAMCertBack:(NSString *)certInfo photo:(NSData *)photo fingerprint:(NSData *)fingerprint dn:(NSString *)dn withResult:(int)result;
 
 /*
  功能:代理方法,读取卡号时通过该方法返回结果
@@ -385,7 +509,7 @@ error 描述失败的具体原因
 - (void)ReadICCIDIMSIsuccessBack:(SRIDReadCardInfo*)peripheral withData:(id)data;
 
 /*
- 功能:代理方法,写卡时通过该方法返回结果
+ 功能:代理方法,联通写卡时通过该方法返回结果
  参数:结果信息
  返回值:无
  */
@@ -427,6 +551,14 @@ error 描述失败的具体原因
  返回值：无
  */
 - (void)writeMobileCardH_NSuccessBack:(NSString *)mobileStr withData:(id)data;
+
+/*
+ 功能：代理方法，返回贵州移动写卡结果信息
+ 参数：结果信息
+ 返回值：无
+ */
+- (void)writeMobileCard_guizhouSuccessBack:(NSString *)mobileStr withData:(id)data;
+
 /*
  功能：代理方法，返回读取sim卡号码
  参数：结果信息
@@ -461,6 +593,8 @@ error 描述失败的具体原因
 - (void)SRBluetoothSuccessBack:(NSString *)time;
 
 - (void)SRNetworkSuccessBack:(NSString *)time;
+
+- (void)tokenResultSuccessBack:(NSString *)string;
 
 @end
 

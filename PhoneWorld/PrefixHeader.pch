@@ -10,10 +10,15 @@
 #define PrefixHeader_pch
 #import "UILabel+Extension.h"
 //现在是测试！！！！！！！！！！
-//#define mainPath @"http://121.46.26.224:8088/newagency/AgencyInterface"
+#define mainPath @"http://121.46.26.224:8088/newagency/AgencyInterface"
 
 //现在是正式！！！！！！！！！！
-#define mainPath @"http://121.46.26.224:8080/newagency/AgencyInterface"
+//#define mainPath @"http://121.46.26.224:8080/newagency/AgencyInterface"
+
+//TODO: 请咨询售前申请接入信息 森锐
+#define SR_APP_KEY @"0A46F442C9CC45BE98F89C78AFF7B098"
+#define SR_APP_SECRET @"F45D52FBF92B4BE393A26CD8821F8BCE"
+#define SR_APP_PASSWORD @"53A28CBF9A934F3C8D4012EED19FBD9D"
 
 
 #define PX_WIDTH [UIScreen mainScreen].bounds.size.width/375.f
