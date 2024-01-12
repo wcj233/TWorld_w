@@ -4114,7 +4114,7 @@
 			baseConfigurationReference = D3185A9261F048735B2A06F2 /* Pods-PhoneWorld.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 4.7.3.202012120940;
 				DEVELOPMENT_TEAM = 4F6WNCMY6G;
