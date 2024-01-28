@@ -26,6 +26,10 @@
 #import <dlfcn.h>
 #import "ZSYPopoverListView.h"
 
+//山东通信
+#import "STReadWriteCardTool.h"
+#import "BlueManager.h"
+
 // 白色读卡器
 #import "BLEGcouple.h"
 
@@ -50,20 +54,25 @@ ZSYPopoverListDatasource,
 ZSYPopoverListDelegate,
 CBCentralManagerDelegate,
 //小读卡器
-BleProtocol
+BleProtocol,
+STReadWriteCardToolDelegate
 >{
     //1代
     BLEGcouple *ble;
     //3代蓝牙连接设备Manage
+    
     SRIDCardReader* idManager;
     CBCentralManager *manager;
     ZSYPopoverListView *listView;
     int rowCount;
     NSMutableArray *deviceList;
+    NSMutableArray *stDeviceList;
     NSObject *currentDevice;
     
     NSString *SRImsi;
     NSString *SRICCID;
+    
+    STReadWriteCardTool *STReaderTool;
 }
 
 @property (nonatomic) AgentWriteAndChooseView *writeView;
@@ -102,12 +111,14 @@ BleProtocol
     }
     manager.delegate = nil;
     idManager.delegate = nil;
+    [STReaderTool deinitSTReader];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     manager.delegate = self;
     idManager.delegate = self;
+    [STReaderTool initSTReader];
 }
 
 - (void)viewDidLoad {
@@ -133,6 +144,10 @@ BleProtocol
     
     //初始化3代蓝牙Manage
     [self SRInit];
+    //山东通信
+    STReaderTool = [[STReadWriteCardTool alloc] init];
+    STReaderTool.stReadWriteCardToolDelegate = self;
+    [STReaderTool initSTReader];
     
     //初始化1代蓝牙
 //    ble = BLEGcouple.sharedInstance;
@@ -972,7 +987,7 @@ BleProtocol
                 }else if([self.typeString isEqualToString:@"话机世界靓号平台"]){
                     [self HJSJLiangNumberWithIccidString:responseString];
                 }else{
-                    [self getPreImsiForICCID:responseString forBluetoothDevices:YES];
+                    [self getPreImsiForICCID:responseString forBluetoothDevices:YES andISST:NO];
                 }
             }
         }
@@ -1054,8 +1069,8 @@ BleProtocol
     }
 }
 
-//调用接口imsi 是否是老设备
-- (void)getPreImsiForICCID:(NSString *)iccid forBluetoothDevices:(BOOL)isOld{
+//调用接口imsi 是否是老设备 isST--是否是山东通信
+- (void)getPreImsiForICCID:(NSString *)iccid forBluetoothDevices:(BOOL)isOld andISST:(BOOL)isST {
     if (iccid == nil || iccid.length <= 0) {
         [self hideWaitView];
         [self showWarningText:@"ICCID获取异常"];
@@ -1082,20 +1097,26 @@ BleProtocol
                     NSString *simId = data[@"simId"];
                     SRImsi = imsi;
                     SRICCID = iccid;
-                    if (!isOld) { //3代
-                        if ([smscent containsString:@"+86"]) {
-                            smscent = [smscent substringFromIndex:3];
+                    if (isST) {
+                        //山东通信
+                        [STReaderTool STWriteCardWithSimCard:imsi andSMSNO:smscent];
+                    } else {
+                        if (!isOld) { //3代
+                            if ([smscent containsString:@"+86"]) {
+                                smscent = [smscent substringFromIndex:3];
+                            }
+                            if([idManager cardPoweron]){
+                                [idManager writeSimCard:imsi withNo:smscent];
+                            }else{
+                                [self hideWaitView];
+                                [self showWarningText:@"卡上电失败"];
+                            }
+                        }else{ //1代
+                            //此时写卡
+                            [self asyncWriteCardActionWithApduImsi:imsi smscent:smscent blockIccid:blockIccid];
                         }
-                        if([idManager cardPoweron]){
-                            [idManager writeSimCard:imsi withNo:smscent];
-                        }else{
-                            [self hideWaitView];
-                            [self showWarningText:@"卡上电失败"];
-                        }
-                    }else{ //1代
-                        //此时写卡
-                        [self asyncWriteCardActionWithApduImsi:imsi smscent:smscent blockIccid:blockIccid];
                     }
+                    
                 }else{
                     [self showWarningText:obj[@"mes"]];
                 }
@@ -1114,20 +1135,26 @@ BleProtocol
                     NSString *simId = data[@"simId"];
                     SRImsi = imsi;
                     SRICCID = iccid;
-                    if (!isOld) { //3代
-                        if ([smscent containsString:@"+86"]) {
-                            smscent = [smscent substringFromIndex:3];
+                    if (isST) {
+                        //山东通信
+                        [STReaderTool STWriteCardWithSimCard:imsi andSMSNO:smscent];
+                    } else {
+                        if (!isOld) { //3代
+                            if ([smscent containsString:@"+86"]) {
+                                smscent = [smscent substringFromIndex:3];
+                            }
+                            if([idManager cardPoweron]){
+                                [idManager writeSimCard:imsi withNo:smscent];
+                            }else{
+                                [self hideWaitView];
+                                [self showWarningText:@"卡上电失败"];
+                            }
+                        }else{ //1代
+                            //此时写卡
+                            [self asyncWriteCardActionWithApduImsi:imsi smscent:smscent blockIccid:iccid];
                         }
-                        if([idManager cardPoweron]){
-                            [idManager writeSimCard:imsi withNo:smscent];
-                        }else{
-                            [self hideWaitView];
-                            [self showWarningText:@"卡上电失败"];
-                        }
-                    }else{ //1代
-                        //此时写卡
-                        [self asyncWriteCardActionWithApduImsi:imsi smscent:smscent blockIccid:iccid];
                     }
+                    
                 }else{
                     [self showWarningText:obj[@"mes"]];
                 }
@@ -1288,9 +1315,11 @@ BleProtocol
         CBPeripheral *peripheralDevice = (CBPeripheral *)currentDevice;
         if ([[peripheralDevice.name substringToIndex:2] isEqualToString:@"SR"]) {
             [self SRConnectedDevicesForPeripheral:peripheralDevice];
-        }else if([[peripheralDevice.name substringToIndex:2] isEqualToString:@"ZR"]){
+        } else if ([[peripheralDevice.name substringToIndex:2] isEqualToString:@"ST"]) {//ST
+            [STReaderTool STConnectedDevicesForPeripheral:[stDeviceList objectAtIndex:indexPath.row]];
+        } else if([[peripheralDevice.name substringToIndex:2] isEqualToString:@"ZR"]) {
             [self ultramanConnectedDevices:peripheralDevice];
-        }else{
+        } else {
             [self hideWaitView];
             [self showWarningText:@"选择的设备无法识别"];
         }
@@ -1328,11 +1357,21 @@ BleProtocol
     
     if(deviceList==nil){
         deviceList=[NSMutableArray array];
+        stDeviceList = [NSMutableArray array];
     }
     if([deviceList containsObject:peripheraln] || peripheraln.name.length == 0){
         return;
     }
     [deviceList addObject:peripheraln];
+    
+    //st的设置
+    STMyPeripheral *newMyPerip = [[STMyPeripheral alloc] initWithCBPeripheral:peripheraln];
+    NSString *mac = [[BlueManager instance] macTrans:[advertisementData objectForKey:@"kCBAdvDataManufacturerData"]];
+    newMyPerip.advName = peripheraln.name;
+    newMyPerip.mac = mac;
+    
+    [stDeviceList addObject:newMyPerip];
+    
     rowCount = [deviceList count];
     
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -1356,6 +1395,33 @@ BleProtocol
     NSLog(@"connected periphheral failed");
 }
 
+#pragma mark -============= ST山东信通 代理 ================
+
+// 读ICCID，IMSI及发送APDU指令代理方法 - 返回信息的获取参照DEMO实例
+- (void)STReadICCIDsuccessBack:(STIDReadCardInfo *)peripheral withData:(id)data {
+    [self hideWaitView];
+    
+    [self showWaitView];
+    //调用接口imsi
+    [self getPreImsiForICCID:peripheral.ICCID forBluetoothDevices:NO andISST:YES];
+}
+
+- (void)STWriteCardResultBack:(STIDReadCardInfo *)peripheral withData:(id)data {
+
+    if (peripheral.writeCardResult ==0 && peripheral.messageResult==0) {
+        [self resultWriteCardResultsForResult:@"0" imsi:SRImsi iccid:SRICCID];
+    } else {
+        //@"写卡失败";
+        [self resultWriteCardResultsForResult:@"1" imsi:SRImsi iccid:SRICCID];
+    }
+}
+
+- (void)STFailedBack:(STMyPeripheral *)peripheral withError:(NSError *)error {
+    
+    [self hideWaitView];
+    [self showWarningText:@"ICCID获取异常"];
+}
+
 #pragma mark -============= 3代蓝牙 代理 ================
 /*
  功能：代理方法，返回读取sim卡号码
@@ -1364,16 +1430,6 @@ BleProtocol
  */
 - (void)readPhoneNumberSuccessBack:(NSString *)numberStr withData:(id)data{
 //    [self performSelectorOnMainThread:@selector(showMessage:) withObject:[NSString stringWithFormat:@"%@:%@",data,numberStr] waitUntilDone:NO];
-    
-}
-/*
- 功能:代理方法,读取卡号时通过该方法返回结果
- 参数:结果信息
- 返回值:无
- */
-- (void)ReadICCIDsuccessBack:(SRIDReadCardInfo*)peripheral withData:(id)data{
-    NSLog(@"%d",[((NSNumber *)data) intValue]);
-//    [self performSelectorOnMainThread:@selector(showMessage:) withObject:[NSString stringWithFormat:@"%@:%@",data,peripheral.ICCID] waitUntilDone:NO];
     
 }
 
@@ -1397,7 +1453,7 @@ BleProtocol
     
     [self showWaitView];
     //调用接口imsi
-    [self getPreImsiForICCID:peripheral.ICCID forBluetoothDevices:NO];
+    [self getPreImsiForICCID:peripheral.ICCID forBluetoothDevices:NO andISST:NO];
     [idManager cardPoweroff];
 }
 
@@ -1406,7 +1462,7 @@ BleProtocol
  参数:结果信息
  返回值:无
  */
-- (void)writeCardResultBack:(SRIDReadCardInfo*)peripheral withData:(id)data{
+- (void)writeCardResultBack:(SRIDReadCardInfo*)peripheral withData:(id)data {
 //    [self performSelectorOnMainThread:@selector(showMessage:) withObject:[NSString stringWithFormat:@"%@:%@",data,peripheral.writeCardResult==0?@"成功":@"失败"] waitUntilDone:NO];
     if (peripheral.writeCardResult == 0) {//成功
         [self resultWriteCardResultsForResult:@"0" imsi:SRImsi iccid:SRICCID];

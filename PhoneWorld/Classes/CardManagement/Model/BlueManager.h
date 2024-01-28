@@ -27,6 +27,7 @@
 -(void)connectPeripher:(STMyPeripheral *)peripheral;
 - (void)disConnectPeripher:(STMyPeripheral *)peripheral;
 
+- (NSString *)macTrans:(NSData *)data;
 
 
 @end

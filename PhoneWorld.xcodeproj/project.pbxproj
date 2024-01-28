@@ -427,6 +427,7 @@
 		8AFC48D61DC9EF4D00E6C982 /* MessageDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AFC48D51DC9EF4D00E6C982 /* MessageDetailModel.m */; };
 		8AFF2A681EC54EB9004C1F96 /* NumberDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AFF2A671EC54EB9004C1F96 /* NumberDetailViewController.m */; };
 		8AFF2A6B1EC5582F004C1F96 /* PayWayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AFF2A6A1EC5582F004C1F96 /* PayWayView.m */; };
+		9303CCFD2B5F57CC00FC7370 /* STReadWriteCardTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 9303CCFC2B5F57CC00FC7370 /* STReadWriteCardTool.m */; };
 		9304734E2B33D2B0000215BB /* libUnPack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9304734B2B33D2AF000215BB /* libUnPack.a */; };
 		9304734F2B33D2B0000215BB /* libReliableBurstData_arm64.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9304734C2B33D2B0000215BB /* libReliableBurstData_arm64.a */; };
 		930473502B33D2B0000215BB /* SRIDCardReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9304734D2B33D2B0000215BB /* SRIDCardReader.framework */; };
@@ -1279,6 +1280,8 @@
 		8AFF2A671EC54EB9004C1F96 /* NumberDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberDetailViewController.m; sourceTree = "<group>"; };
 		8AFF2A691EC5582F004C1F96 /* PayWayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayWayView.h; sourceTree = "<group>"; };
 		8AFF2A6A1EC5582F004C1F96 /* PayWayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayWayView.m; sourceTree = "<group>"; };
+		9303CCFB2B5F57CC00FC7370 /* STReadWriteCardTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STReadWriteCardTool.h; sourceTree = "<group>"; };
+		9303CCFC2B5F57CC00FC7370 /* STReadWriteCardTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STReadWriteCardTool.m; sourceTree = "<group>"; };
 		9304734B2B33D2AF000215BB /* libUnPack.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUnPack.a; sourceTree = "<group>"; };
 		9304734C2B33D2B0000215BB /* libReliableBurstData_arm64.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libReliableBurstData_arm64.a; sourceTree = "<group>"; };
 		9304734D2B33D2B0000215BB /* SRIDCardReader.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SRIDCardReader.framework; sourceTree = "<group>"; };
@@ -1739,6 +1742,8 @@
 			children = (
 				8A192AC11ECE706D00EED400 /* AgentNumberModel.h */,
 				8A192AC21ECE706D00EED400 /* AgentNumberModel.m */,
+				9303CCFB2B5F57CC00FC7370 /* STReadWriteCardTool.h */,
+				9303CCFC2B5F57CC00FC7370 /* STReadWriteCardTool.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -3501,6 +3506,7 @@
 				8AF1CB0C1EC14D590055BBA0 /* WhitePrepareOpenThreeView.m in Sources */,
 				36CD224821006E1B00466531 /* DetailTableViewCell.m in Sources */,
 				8A138C1D1ECACBE700099D99 /* LiangNumberModel.m in Sources */,
+				9303CCFD2B5F57CC00FC7370 /* STReadWriteCardTool.m in Sources */,
 				8A20FB011EE24708003077BF /* ChooseProductView.m in Sources */,
 				8A6221E6200E060900D60085 /* LCYPopView.m in Sources */,
 				8A96D2E81DC084E90052C46C /* ChannelPartnersCell.m in Sources */,
@@ -4031,7 +4037,7 @@
 					"$(PROJECT_DIR)/PhoneWorld/Tools/UMessage_Sdk_1.5.0a",
 					"$(PROJECT_DIR)",
 				);
-				MARKETING_VERSION = 4.9.5;
+				MARKETING_VERSION = 4.9.6;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -4153,7 +4159,7 @@
 					"$(PROJECT_DIR)/PhoneWorld/Tools/UMessage_Sdk_1.5.0a",
 					"$(PROJECT_DIR)",
 				);
-				MARKETING_VERSION = 4.9.5;
+				MARKETING_VERSION = 4.9.6;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"$(inherited)",

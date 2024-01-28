@@ -183,20 +183,26 @@ static BlueManager *manager = nil;
 - (NSString *)macTrans:(NSData *)data{
     NSString *result = nil;
     if(data){
-        NSString *mStr = [data description];
-        mStr = [mStr stringByReplacingOccurrencesOfString:@" " withString:@""];
-        mStr = [mStr stringByReplacingOccurrencesOfString:@">" withString:@""];
-        mStr = [mStr stringByReplacingOccurrencesOfString:@"<" withString:@""];
+        NSMutableString *mStr = [NSMutableString string];
+        const char *bytes = data.bytes;
+        NSInteger count = data.length;
+        for(NSUInteger i = 0; i < count; i++) {
+            [mStr appendString:[NSString stringWithFormat:@"%0.2hhx", bytes[i]]];
+        }
+        //NSString *mStr = [data description];
+        [mStr stringByReplacingOccurrencesOfString:@" " withString:@""];
+        [mStr stringByReplacingOccurrencesOfString:@">" withString:@""];
+        [mStr stringByReplacingOccurrencesOfString:@"<" withString:@""];
         
         NSMutableArray *macArray = [NSMutableArray array];
         
-        if (mStr.length % 2 == 0) {
-            for(int i= 4;i<mStr.length;i +=2){
+        for(int i= 4;i<mStr.length;i +=2){
+            if(i+2 <= mStr.length) {
                 [macArray addObject:[mStr substringWithRange:NSMakeRange(i, 2)]];
-                
             }
-            result = [[macArray componentsJoinedByString:@":"] uppercaseString];
         }
+        
+        result = [[macArray componentsJoinedByString:@":"] uppercaseString];
     }
     
     return result ==nil?@"":result;
