@@ -40,7 +40,7 @@
     if (paramtersDic != nil) {
         [paramestr appendFormat:@"\"app_key\":\"%@\"",[paramtersDic objectForKey:@"app_key"]];
         [paramestr appendFormat:@",\"app_sign\":\"%@\"",[paramtersDic objectForKey:@"app_sign"]];
-        [paramestr appendFormat:@",\"version\":\"4.9.4\""];
+        [paramestr appendFormat:@",\"version\":\"4.9.8\""];
         
         NSString *string = [Utils MydictionaryToJSON:[paramtersDic objectForKey:@"parameter"]];
         [paramestr appendFormat:@",\"parameter\":%@",string];
@@ -139,7 +139,7 @@
     if (paramtersDic != nil) {
         [paramestr appendFormat:@"\"app_key\":\"%@\"",[paramtersDic objectForKey:@"app_key"]];
         [paramestr appendFormat:@",\"app_sign\":\"%@\"",[paramtersDic objectForKey:@"app_sign"]];
-        [paramestr appendFormat:@",\"version\":\"4.9.4\""];
+        [paramestr appendFormat:@",\"version\":\"4.9.8\""];
 
         
         NSString *string = [Utils MydictionaryToJSON:[paramtersDic objectForKey:@"parameter"]];
@@ -211,7 +211,7 @@
     
     NSString *app_sign = [Utils md5String:[NSString stringWithFormat:@"%@%@%@",app_pwd,paramsString,app_pwd]];
     
-    NSMutableDictionary *sendParams = [@{@"app_key":app_keyMD5,@"app_sign":app_sign,@"version":@"4.9.4",@"parameter":paramtersDic} mutableCopy];
+    NSMutableDictionary *sendParams = [@{@"app_key":app_keyMD5,@"app_sign":app_sign,@"version":@"4.9.8",@"parameter":paramtersDic} mutableCopy];
     
     NSString *path = [NSString stringWithFormat:@"%@%@",mainPath,urlStr];
     
